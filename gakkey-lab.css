@@ -300,6 +300,15 @@ h1 span {
   margin-right: auto;
 }
 
+#apps,
+#bridge-meter,
+#rtc,
+#side-note,
+#manuals,
+#download {
+  scroll-margin-top: 92px;
+}
+
 .app-overview {
   padding: 96px 0;
 }
@@ -609,6 +618,50 @@ h1 span {
   border-radius: 50%;
 }
 
+.product-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  margin-top: 28px;
+  padding: 0 16px;
+  color: #0e5f93;
+  background: white;
+  border: 2px solid rgba(39, 141, 221, 0.5);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 7px 0 rgba(39, 141, 221, 0.1);
+}
+
+.product-download:hover {
+  color: white;
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.product-download small {
+  padding-left: 12px;
+  color: inherit;
+  border-left: 1px solid currentColor;
+  font-size: 11px;
+  opacity: 0.72;
+}
+
+.dark-download {
+  color: #f7d69e;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 214, 158, 0.4);
+  box-shadow: none;
+}
+
+.dark-download:hover {
+  color: #161400;
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
 .window-shot {
   display: grid;
   place-items: center;
@@ -681,7 +734,7 @@ h1 span {
 
 .download {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 44px;
   align-items: center;
   margin-bottom: 96px;
@@ -691,36 +744,74 @@ h1 span {
   border-radius: 8px;
 }
 
-.download-package {
-  display: grid;
-  justify-items: center;
-  gap: 8px;
-  text-align: center;
-}
-
-.download-package img {
-  width: 144px;
-  height: 144px;
+.download-heading > img {
+  width: 108px;
+  height: 108px;
+  margin-bottom: 16px;
   object-fit: contain;
 }
 
-.download-package a {
+.download-list {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(147, 115, 32, 0.22);
+  border-radius: 8px;
+}
+
+.download-item {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 88px;
+  padding: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.download-item + .download-item {
+  border-top: 1px solid rgba(147, 115, 32, 0.22);
+}
+
+.download-item:hover {
+  background: white;
+}
+
+.download-item img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.download-item span {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.download-item strong {
+  line-height: 1.25;
+}
+
+.download-item small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.download-item b {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 18px;
+  min-height: 38px;
+  padding: 0 13px;
   color: #161400;
   background: var(--yellow);
-  border: 2px solid #d59d0c;
-  border-radius: 8px;
-  font-weight: 900;
-}
-
-.download-package small {
-  color: var(--muted);
+  border: 1px solid #d59d0c;
+  border-radius: 7px;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .footer {
@@ -777,6 +868,15 @@ h1 span {
 }
 
 @media (max-width: 720px) {
+  #apps,
+  #bridge-meter,
+  #rtc,
+  #side-note,
+  #manuals,
+  #download {
+    scroll-margin-top: 132px;
+  }
+
   .topbar {
     align-items: flex-start;
     flex-direction: column;
@@ -868,6 +968,31 @@ h1 span {
 
   .download {
     padding: 24px;
+  }
+
+  .download-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .download-item img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .download-item b {
+    grid-column: 1 / -1;
+  }
+
+  .product-download {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 14px;
+  }
+
+  .product-download small {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .footer {
