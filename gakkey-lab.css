@@ -56,6 +56,8 @@ img {
 
 .brand,
 .topbar nav,
+.topbar-controls,
+.language-switch,
 .product-title,
 .manual-actions {
   display: flex;
@@ -82,6 +84,37 @@ img {
 
 .topbar nav a:hover {
   color: var(--blue);
+}
+
+.topbar-controls {
+  gap: 20px;
+}
+
+.language-switch {
+  flex: 0 0 auto;
+  gap: 3px;
+  padding: 3px;
+  background: #edf5f8;
+  border: 1px solid rgba(39, 141, 221, 0.22);
+  border-radius: 7px;
+}
+
+.language-switch a {
+  padding: 6px 8px;
+  color: #687377;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.language-switch a:hover {
+  color: var(--blue);
+}
+
+.language-switch a.active {
+  color: #176fa9;
+  background: white;
+  box-shadow: 0 1px 5px rgba(31, 38, 35, 0.1);
 }
 
 .hero {
@@ -751,10 +784,26 @@ h1 span {
     padding: 15px 18px;
   }
 
-  .topbar nav {
+  .topbar-controls {
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .topbar nav {
+    min-width: 0;
     overflow-x: auto;
     padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .topbar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .language-switch {
+    margin-left: auto;
   }
 
   .hero {
