@@ -1,0 +1,31 @@
+.DS_Store
+**/.DS_Store
+
+# Working materials and old design studies
+/素材/
+/Icon*
+/gakkey-lab.html
+/lab.html
+/lab.css
+/pop.html
+/pop.css
+/studio.html
+/studio.css
+/studio-pop.html
+/studio-pop.css
+/styles.css
+/script.js
+
+# Old preview assets outside the public site assets
+/assets/*.png
+
+# Unused image variants kept locally for design work
+/assets/gakkey-lab/apps-closeup.png
+/assets/gakkey-lab/logo-header.png
+/assets/gakkey-lab/mark.png
+/assets/gakkey-lab/rtc-settings.png
+/assets/gakkey-lab/side-note-new.png
+
+# Distribute app binaries through GitHub Releases
+*.dmg
+*.zip

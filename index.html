@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAKKEY LAB | macOS Tools for Creative Work</title>
+    <meta
+      name="description"
+      content="「あったらいいな」を、小さなツールに。Bridge Meter、Relative Time Counter、Side Noteを公開するmacOS tools lab。"
+    >
+    <link rel="stylesheet" href="gakkey-lab.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="GAKKEY LAB">
+        <img src="assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#apps">Apps</a>
+        <a href="#bridge-meter">Bridge Meter</a>
+        <a href="#manuals">Manuals</a>
+        <a href="#download">Download</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Small macOS tools lab</p>
+          <h1><span>あったらいいな！を</span><br>小さなツールに。</h1>
+          <p class="lead">
+            自分の制作環境で欲しくなったmacOSアプリを作っています。<br>
+            使ってみたい方へ、ちょっとおすそわけ。
+          </p>
+          <div class="hero-actions">
+            <a class="hero-button" href="#apps">ツールを見る</a>
+            <a class="hero-button secondary-button" href="#download">ダウンロード</a>
+          </div>
+        </div>
+
+        <div class="lab-board" aria-label="GAKKEY LABで制作中の3つのmacOSアプリ">
+          <article class="board-card board-bridge">
+            <img src="assets/gakkey-lab/bridge-vu.png" alt="">
+            <span>Bridge Meter</span>
+            <strong>VU Meter</strong>
+          </article>
+          <article class="board-card board-rtc">
+            <img src="assets/gakkey-lab/rtc-icon.png" alt="">
+            <span>Relative Time Counter</span>
+            <strong>1:32</strong>
+          </article>
+          <article class="board-card board-note">
+            <img src="assets/gakkey-lab/side-note-icon.png" alt="">
+            <span>Side Note</span>
+            <strong>AutoHide</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="app-overview" id="apps">
+        <div class="section-heading">
+          <p class="eyebrow">Current tools</p>
+          <h2>3つの小さなツール。</h2>
+        </div>
+
+        <div class="app-grid">
+          <a class="app-card featured-card" href="#bridge-meter">
+            <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="Bridge Meter icon">
+            <div>
+              <span class="app-kind">Featured</span>
+              <h3>Bridge Meter</h3>
+              <p>VU、ラウドネス、位相計、スペクトラムアナライザーを作業画面にビルトイン。</p>
+            </div>
+          </a>
+
+          <a class="app-card" href="#rtc">
+            <img src="assets/gakkey-lab/rtc-icon.png" alt="Relative Time Counter icon">
+            <div>
+              <span class="app-kind">Pro Tools companion</span>
+              <h3>Relative Time Counter</h3>
+              <p>曲頭やバウンス頭を0にできる相対時間カウンター。</p>
+            </div>
+          </a>
+
+          <a class="app-card" href="#side-note">
+            <img src="assets/gakkey-lab/side-note-icon.png" alt="Side Note icon">
+            <div>
+              <span class="app-kind">Floating work tool</span>
+              <h3>Side Note</h3>
+              <p>テキスト、PDF、画像を作業中ずっとそばに。</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="product bridge-section" id="bridge-meter">
+        <div class="product-heading">
+          <div class="product-title">
+            <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
+            <div>
+              <p class="eyebrow">Bridge Meter &amp; Bridge Plugin</p>
+              <h2>常時表示の<br>メーターを、<br>小さく配置。</h2>
+            </div>
+          </div>
+          <p class="product-intro">
+            DAW内のBridge Plugin、またはMacのオーディオ入出力から信号を受け取る
+            スタンドアロンメーター。Pro Toolsのツールバー付近にも自然に馴染みます。
+          </p>
+        </div>
+
+        <figure class="protools-showcase">
+          <img
+            src="assets/gakkey-lab/hero-protools.png"
+            alt="Bridge Meter、Relative Time Counter、Side NoteをPro Toolsの作業画面に配置した様子"
+          >
+        </figure>
+
+        <div class="meter-modes">
+          <figure>
+            <img src="assets/gakkey-lab/bridge-vu.png" alt="Stereo VU meter display">
+            <figcaption>
+              <strong>VU Meter</strong>
+              <span>ダブルクリックでVU表示へ。</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="assets/gakkey-lab/bridge-loudness.png" alt="Momentary and short-term loudness display">
+            <figcaption>
+              <strong>Loudness</strong>
+              <span>Momentary / Short-Term LUFSを表示。</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="assets/gakkey-lab/bridge-analyzer.png" alt="Lissajous and spectrum analyzer display">
+            <figcaption>
+              <strong>Phase &amp; Spectrum</strong>
+              <span>リサージュとスペクトラムを同時に確認。</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="bridge-detail">
+          <figure class="detail-shot">
+            <img src="assets/gakkey-lab/bridge-detached.png" alt="Bridge Meter panels detached over a Pro Tools session">
+          </figure>
+          <div class="detail-copy">
+            <p class="eyebrow">Flexible panels</p>
+            <h3>必要なパネルだけ、好きな場所へ。</h3>
+            <p>
+              ラウドネス、リサージュ、スペクトラムは一時的に分離表示できます。
+              Reference Levelも用途に合わせて変更できます。
+            </p>
+            <div class="feature-tags">
+              <span>Bridge Plugin</span>
+              <span>System Audio Input</span>
+              <span>System Audio Output</span>
+              <span>AAX / VST3 / AU</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="plugin-strip">
+          <img src="assets/gakkey-lab/bridge-plugin.png" alt="Bridge Plugin window">
+          <div>
+            <h3>Bridge Pluginからメーターへ。</h3>
+            <p>
+              DAWに挿したBridge PluginからBridge Meterへ表示用信号を送信。
+              音声そのものは変更しません。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="product split-product rtc-section" id="rtc">
+        <div class="split-copy">
+          <div class="product-title compact-title">
+            <img src="assets/gakkey-lab/rtc-icon.png" alt="">
+            <div>
+              <p class="eyebrow">Relative Time Counter</p>
+              <h2>好きなところで、<br>カウンターを0に！</h2>
+            </div>
+          </div>
+          <p>
+            Pro Toolsの絶対タイムコードとは別に、任意の位置をREL=0として表示。
+            クライアントから伝えられた「1:30」の場所へ、迷わず戻れます。
+          </p>
+          <ul class="plain-features">
+            <li>REL / ABS表示切り替え</li>
+            <li>相対時間またはタイムコードでロケート</li>
+            <li>PTSL SDKによるレート補正とPro Tools連携</li>
+            <li>Auto Talkback機能</li>
+          </ul>
+        </div>
+        <figure class="window-shot">
+          <img
+            src="assets/gakkey-lab/rtc-screenshot.png"
+            alt="Relative Time Counterのカウンターと設定画面をPro Tools上に表示した様子"
+          >
+        </figure>
+      </section>
+
+      <section class="product split-product note-section" id="side-note">
+        <figure class="window-shot note-shot">
+          <img
+            src="assets/gakkey-lab/side-note-screenshot.png"
+            alt="Side Noteでメモ、歌詞、画像をPro Tools上に表示した様子"
+          >
+        </figure>
+        <div class="split-copy">
+          <div class="product-title compact-title">
+            <img src="assets/gakkey-lab/side-note-icon.png" alt="">
+            <div>
+              <p class="eyebrow">Side Note</p>
+              <h2>メモもPDFも、<br>いつも作業のそばに。</h2>
+            </div>
+          </div>
+          <p>
+            テキスト、PDF、画像を3つのノートで扱えるフローティングメモ。
+            最前面に置きながら、邪魔になった時はAutoHideで静かに隠れます。
+          </p>
+          <ul class="plain-features">
+            <li>テキスト / PDF / 画像</li>
+            <li>3つの独立したノート</li>
+            <li>透明度調整とAutoHide</li>
+            <li>ウインドウ位置と内容をまとめて保存</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="manuals" id="manuals">
+        <div class="section-heading">
+          <p class="eyebrow">Manuals</p>
+          <h2>まずはPDFガイドから。</h2>
+          <p>Web版マニュアルも、今後ここへ追加する予定です。</p>
+        </div>
+        <div class="manual-grid">
+          <article>
+            <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
+            <h3>Bridge Meter</h3>
+            <div class="manual-actions">
+              <a href="assets/gakkey-lab/bridge-guide-ja.pdf" target="_blank" rel="noopener">日本語</a>
+              <a href="assets/gakkey-lab/bridge-guide-en.pdf" target="_blank" rel="noopener">English</a>
+            </div>
+          </article>
+          <article>
+            <img src="assets/gakkey-lab/rtc-icon.png" alt="">
+            <h3>Relative Time Counter</h3>
+            <div class="manual-actions">
+              <a href="assets/gakkey-lab/rtc-guide.pdf" target="_blank" rel="noopener">ガイドを開く</a>
+            </div>
+          </article>
+          <article>
+            <img src="assets/gakkey-lab/side-note-icon.png" alt="">
+            <h3>Side Note</h3>
+            <div class="manual-actions">
+              <a href="assets/gakkey-lab/side-note-guide.pdf" target="_blank" rel="noopener">ガイドを開く</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="download" id="download">
+        <div>
+          <p class="eyebrow">Download</p>
+          <h2>ここからダウンロード。</h2>
+          <p>3つのアプリは無料配布を予定しています。配布ファイルの準備ができ次第、ここから直接ダウンロードできるようになります。</p>
+        </div>
+        <div class="download-package">
+          <img src="assets/gakkey-lab/package-icon.png" alt="">
+          <a href="#" aria-disabled="true">ここからダウンロード</a>
+          <small>現在準備中</small>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
+      <span>Small macOS tools for creative work.</span>
+    </footer>
+  </body>
+</html>
