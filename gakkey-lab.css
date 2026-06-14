@@ -618,6 +618,40 @@ h1 span {
   border-radius: 50%;
 }
 
+.system-requirements {
+  display: grid;
+  gap: 4px;
+  margin-top: 24px;
+  padding: 13px 15px;
+  color: #46514d;
+  background: #eef7fd;
+  border-left: 3px solid var(--blue);
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.system-requirements strong {
+  color: #176fa9;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.dark-requirements {
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: #f7d69e;
+}
+
+.bridge-section .plugin-strip p.dark-requirements {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dark-requirements strong {
+  color: #f7d69e;
+}
+
 .product-download {
   display: inline-flex;
   align-items: center;
@@ -751,6 +785,13 @@ h1 span {
   object-fit: contain;
 }
 
+.testing-note {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(147, 115, 32, 0.22);
+  font-size: 12px;
+}
+
 .download-list {
   display: grid;
   gap: 0;
@@ -798,6 +839,7 @@ h1 span {
 .download-item small {
   color: var(--muted);
   font-size: 12px;
+  line-height: 1.35;
 }
 
 .download-item b {
