@@ -108,7 +108,7 @@
   }
 
   function createSettingsButton() {
-    var footer = document.querySelector(".footer");
+    var footer = document.querySelector(".footer-links") || document.querySelector(".footer");
     if (!footer) return;
 
     var isJapanese = document.documentElement.lang === "ja";

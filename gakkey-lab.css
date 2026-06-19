@@ -918,6 +918,31 @@ h1 span {
   opacity: 0.9;
 }
 
+.footer-meta {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+}
+
+.footer-links a {
+  color: #5b676b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+}
+
 .cookie-settings {
   padding: 0;
   color: #5b676b;
@@ -1166,6 +1191,15 @@ h1 span {
   .footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 
   .cookie-consent {
