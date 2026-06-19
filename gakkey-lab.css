@@ -327,6 +327,10 @@ h1 span {
   letter-spacing: 0;
 }
 
+.download h2 {
+  font-size: clamp(32px, 4vw, 52px);
+}
+
 .section-heading > p:not(.eyebrow),
 .product-intro,
 .split-copy > p,
@@ -674,6 +678,34 @@ h1 span {
   margin-top: 10px;
 }
 
+.latest-update {
+  display: grid;
+  gap: 3px;
+  margin-top: 10px;
+  color: #46514d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.latest-update strong {
+  color: var(--green);
+  font-size: 11px;
+}
+
+.dark-update {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dark-update strong {
+  color: #f7d69e;
+}
+
+.latest-update + .product-download {
+  display: flex;
+  width: fit-content;
+  margin-top: 10px;
+}
+
 .product-download:hover {
   color: white;
   background: var(--blue);
@@ -846,6 +878,11 @@ h1 span {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.35;
+}
+
+.download-item .release-summary {
+  color: #176fa9;
+  font-weight: 700;
 }
 
 .download-item b {
