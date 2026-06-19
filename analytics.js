@@ -81,22 +81,22 @@
     var isJapanese = document.documentElement.lang === "ja";
     var banner = document.createElement("aside");
     banner.className = "cookie-consent";
-    banner.setAttribute("aria-label", isJapanese ? "アクセス解析の設定" : "Analytics settings");
+    banner.setAttribute("aria-label", isJapanese ? "Cookieの設定" : "Cookie settings");
     banner.innerHTML =
       '<div class="cookie-consent-copy">' +
-        '<strong>' + (isJapanese ? "アクセス解析について" : "About analytics") + '</strong>' +
+        '<strong>' + (isJapanese ? "Cookieの使用について" : "About cookies") + '</strong>' +
         '<p>' +
           (isJapanese
-            ? "サイト改善のためGoogle Analyticsを使用します。許可するまで計測は開始しません。"
-            : "We use Google Analytics to improve this site. Tracking does not begin until you allow it.") +
+            ? "当サイトでは、利用状況の把握と改善のためGoogle AnalyticsのCookieを使用します。同意するまで計測は開始しません。"
+            : "We use Google Analytics cookies to understand site usage and improve this website. Tracking does not begin until you consent.") +
           ' <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">' +
           (isJapanese ? "Googleのプライバシーポリシー" : "Google Privacy Policy") +
           '</a>' +
         '</p>' +
       '</div>' +
       '<div class="cookie-consent-actions">' +
-        '<button type="button" data-consent="denied">' + (isJapanese ? "許可しない" : "Decline") + '</button>' +
-        '<button class="primary" type="button" data-consent="granted">' + (isJapanese ? "許可する" : "Allow") + '</button>' +
+        '<button type="button" data-consent="denied">' + (isJapanese ? "拒否する" : "Decline") + '</button>' +
+        '<button class="primary" type="button" data-consent="granted">' + (isJapanese ? "同意する" : "Accept") + '</button>' +
       '</div>';
 
     banner.addEventListener("click", function (event) {
@@ -115,7 +115,7 @@
     var button = document.createElement("button");
     button.className = "cookie-settings";
     button.type = "button";
-    button.textContent = isJapanese ? "アクセス解析の設定" : "Analytics settings";
+    button.textContent = isJapanese ? "Cookie設定" : "Cookie settings";
     button.addEventListener("click", function () {
       setBannerVisible(true);
     });
