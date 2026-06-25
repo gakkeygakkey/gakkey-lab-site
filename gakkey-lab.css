@@ -305,7 +305,10 @@ h1 span {
 #rtc,
 #side-note,
 #manuals,
-#download {
+#download,
+#download-bridge-meter,
+#download-relative-time-counter,
+#download-side-note {
   scroll-margin-top: 92px;
 }
 
@@ -880,9 +883,14 @@ h1 span {
   line-height: 1.35;
 }
 
+.download-item .release-version,
 .download-item .release-summary {
   color: #176fa9;
   font-weight: 700;
+}
+
+.download-item .release-version {
+  margin-top: 4px;
 }
 
 .download-item b {
@@ -1066,7 +1074,10 @@ h1 span {
   #rtc,
   #side-note,
   #manuals,
-  #download {
+  #download,
+  #download-bridge-meter,
+  #download-relative-time-counter,
+  #download-side-note {
     scroll-margin-top: 132px;
   }
 
