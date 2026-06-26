@@ -54,9 +54,9 @@
 
         <div class="lab-board" aria-label="GAKKEY LABで制作中の3つのmacOSアプリ">
           <article class="board-card board-bridge">
-            <img src="assets/gakkey-lab/bridge-vu.png" alt="">
+            <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
             <span>Bridge Meter</span>
-            <strong>VU Meter</strong>
+            <strong>Metering</strong>
           </article>
           <article class="board-card board-rtc">
             <img src="assets/gakkey-lab/rtc-icon.png" alt="">
@@ -87,7 +87,7 @@
             </div>
           </a>
 
-          <a class="app-card" href="#rtc">
+          <a class="app-card rtc-card" href="#rtc">
             <img src="assets/gakkey-lab/rtc-icon.png" alt="Relative Time Counter icon">
             <div>
               <span class="app-kind">Pro Tools companion</span>
@@ -96,7 +96,7 @@
             </div>
           </a>
 
-          <a class="app-card" href="#side-note">
+          <a class="app-card note-card" href="#side-note">
             <img src="assets/gakkey-lab/side-note-icon.png" alt="Side Note icon">
             <div>
               <span class="app-kind">Floating work tool</span>
@@ -206,13 +206,14 @@
             </div>
           </div>
           <p>
-            Pro Toolsの絶対タイムコードとは別に、任意の位置をREL=0として表示。
+            MTC / MMCを使って、任意の位置をREL=0として表示。
             クライアントから伝えられた「1:30」の場所へ、迷わず戻れます。
           </p>
           <ul class="plain-features">
             <li>REL / ABS表示切り替え</li>
+            <li>MTC / MMC対応で、さまざまなDAWと連携</li>
             <li>相対時間またはタイムコードでロケート</li>
-            <li>PTSL SDKによるレート補正とPro Tools連携</li>
+            <li>Pro ToolsではPTSL SDKによる連携にも対応</li>
             <li>Auto Talkback機能</li>
           </ul>
           <p class="system-requirements">
