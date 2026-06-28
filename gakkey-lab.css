@@ -1175,6 +1175,14 @@ h1 span {
   .plugin-strip {
     grid-template-columns: 1fr;
   }
+
+  .note-section .note-shot {
+    order: 2;
+  }
+
+  .note-section .split-copy {
+    order: 1;
+  }
 }
 
 @media (max-width: 720px) {
