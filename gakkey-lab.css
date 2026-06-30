@@ -1414,7 +1414,7 @@ h1 span {
 }
 
 .guide-video {
-  width: min(760px, 100%);
+  width: 100%;
   aspect-ratio: 16 / 9;
   margin: 0 auto;
   overflow: hidden;
