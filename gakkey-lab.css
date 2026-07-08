@@ -1335,6 +1335,14 @@ h1 span {
   font-weight: 800;
 }
 
+.quick-download-panel .release-note {
+  margin-top: -8px;
+  color: #176fa9;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 800;
+}
+
 .quick-section {
   margin-bottom: 70px;
 }
