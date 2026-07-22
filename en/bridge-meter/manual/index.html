@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bridge Meter Manual | GAKKEY LAB</title>
+    <meta
+      name="description"
+      content="Bridge Meter manual. Learn how to choose inputs, switch meter displays, set the reference level, use panels, and connect Bridge Plugin."
+    >
+    <link rel="canonical" href="https://lab.gakkey.com/en/bridge-meter/manual/">
+    <link rel="alternate" hreflang="ja" href="https://lab.gakkey.com/bridge-meter/manual/">
+    <link rel="alternate" hreflang="en" href="https://lab.gakkey.com/en/bridge-meter/manual/">
+    <link rel="alternate" hreflang="x-default" href="https://lab.gakkey.com/bridge-meter/manual/">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/gakkey-lab/favicon.png?v=3">
+    <link rel="shortcut icon" href="/favicon.ico?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/gakkey-lab/apple-touch-icon.png?v=3">
+    <link rel="stylesheet" href="../../../gakkey-lab.css">
+    <script defer src="/analytics.js"></script>
+  </head>
+  <body class="manual-page">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="GAKKEY LAB">
+        <img src="../../../assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
+      </a>
+      <div class="topbar-controls">
+        <nav aria-label="Main navigation">
+          <span class="nav-group nav-apps">
+            <a href="../../#apps">Apps</a>
+            <a href="../../manuals/" aria-current="page">Manuals</a>
+            <a href="../../#download">Download</a>
+          </span>
+          <span class="nav-group nav-quick">
+            <a href="../../quick-actions/">Quick Actions</a>
+          </span>
+        </nav>
+        <div class="language-switch" aria-label="Language">
+          <a href="../../../bridge-meter/manual/" lang="ja">日本語</a>
+          <a class="active" href="./" lang="en" aria-current="page">English</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="manual-shell">
+      <aside class="manual-toc" aria-label="Table of contents">
+        <a class="manual-toc-brand" href="#">
+          <img src="../../../assets/gakkey-lab/bridge-meter-icon.png" alt="">
+          <span>Bridge Meter</span>
+        </a>
+        <nav>
+          <span>Quick Manual</span>
+          <a href="#inputs">Choose Input</a>
+          <a href="#meter-display">Meter Display</a>
+          <a href="#reference-level">Reference Level</a>
+          <a href="#panels">Panels</a>
+          <a href="#bridge-plugin">Bridge Plugin</a>
+          <span>Detailed Manual</span>
+          <a href="#layout-sets">Layout Sets</a>
+          <a href="#vu-settings">VU Settings</a>
+          <a href="#loudness-settings">Loudness Settings</a>
+          <a href="#analyzer-settings">Analyzer Settings</a>
+        </nav>
+      </aside>
+
+      <div class="manual-content" id="top">
+        <section class="manual-hero">
+          <p class="eyebrow">Web Manual</p>
+          <h1>Bridge Meter<br>Manual</h1>
+          <p>
+            Bridge Meter is a macOS meter designed to stay small on your workspace.
+            Switch between Mac system audio, audio input, and Bridge Plugin signals
+            to check VU, loudness, phase, and spectrum displays.
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="inputs">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Input</p>
+            <h2>Choose Input</h2>
+            <p>
+              Choose the input from Bridge Meter's menu.
+              To quickly meter the sound coming out of your Mac, choose “System Audio Out”.
+              With Bridge Plugin, Bridge Meter can receive directly from your DAW, so audio from other apps will not be mixed in.
+            </p>
+          </div>
+          <figure class="manual-media wide">
+            <img src="../../../assets/gakkey-lab/bridge-input-menu.png" alt="Bridge Meter Input menu">
+          </figure>
+          <div class="manual-point-list">
+            <article>
+              <strong>System Audio Out</strong>
+              <span>Meters the audio coming out of your Mac.</span>
+            </article>
+            <article>
+              <strong>System Audio Input</strong>
+              <span>Checks the signal from an input device connected to your Mac.</span>
+            </article>
+            <article>
+              <strong>Bridge Plugin</strong>
+              <span>Receives the metering signal from your DAW with low latency.</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="meter-display">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Meter Display</p>
+            <h2>Double-click the meter area to switch the display</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>Double-click</th>
+                  <td>Switch between VU and Loudness</td>
+                </tr>
+                <tr>
+                  <th>⌘ + Double-click</th>
+                  <td>Switch to Analyzer</td>
+                </tr>
+                <tr>
+                  <th>Return from Analyzer</th>
+                  <td>Double-click to return to VU</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../../assets/gakkey-lab/meter-switching.gif" alt="Switching Bridge Meter displays">
+            </figure>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="reference-level">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Reference</p>
+            <h2>Set the Reference Level</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>Right-click / Control-click</th>
+                  <td>Choose the reference level</td>
+                </tr>
+                <tr>
+                  <th>Edit Custom...</th>
+                  <td>Edit the custom value in 0.1 dB steps</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../../assets/gakkey-lab/reference-level-menu.png" alt="Bridge Meter Reference Level menu">
+            </figure>
+          </div>
+        </section>
+
+        <section class="manual-section" id="panels">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Panels</p>
+            <h2>Detach Panels</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>Shift + Double-click</th>
+                  <td>Detach the current Loudness or Analyzer display</td>
+                </tr>
+                <tr>
+                  <th>Shift + Double-click<br>on a detached panel</th>
+                  <td>Return it to the Bridge Meter main window</td>
+                </tr>
+                <tr>
+                  <th>⌘ + Shift + Double-click</th>
+                  <td>Detach Loudness and Analyzer together</td>
+                </tr>
+                <tr>
+                  <th>⌘ + Shift + Double-click<br>on a detached panel</th>
+                  <td>Return all detached panels to the Bridge Meter main window</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../../assets/gakkey-lab/panel-detach.gif" alt="Detaching Bridge Meter panels">
+            </figure>
+          </div>
+          <p class="manual-note">
+            When returning all panels at once, the window you ⌘ + Shift + double-clicked will be shown after the panels are combined.
+          </p>
+        </section>
+
+        <section class="manual-section" id="bridge-plugin">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Bridge Plugin</p>
+            <h2>Receive from Bridge Plugin</h2>
+            <p>
+              Insert the AAX / VST3 / AU compatible Bridge Plugin in your DAW,
+              and Bridge Meter can receive the display signal directly from the DAW.
+              The plugin sends only the signal used for metering and does not change the audio itself.
+            </p>
+          </div>
+          <figure class="manual-media framed">
+            <img src="../../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge Plugin Connect Meter button">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Click the Connect Meter button</th>
+                <td>Launch Bridge Meter and switch its input to Bridge Plugin</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            If Bridge Meter is already running, clicking the button will still switch the input to Bridge Plugin.<br>
+            When the plugin disappears, if the previous input was System Audio Out / Input, Bridge Meter returns to that input.
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="layout-sets">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>Layout Sets</h2>
+            <p>
+              From the Window menu, you can save the current panel positions and sizes as a layout.
+              Saved layouts can be restored from the menu or with shortcuts.
+            </p>
+          </div>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Save Layout</th>
+                <td>Save the current panel positions and sizes to the selected number</td>
+              </tr>
+              <tr>
+                <th>Layout 1-5</th>
+                <td>Restore a saved layout</td>
+              </tr>
+              <tr>
+                <th>⌘ + 1-5</th>
+                <td>Restore a saved layout with a shortcut</td>
+              </tr>
+            </tbody>
+          </table>
+          <figure class="manual-media wide">
+            <img src="../../../assets/gakkey-lab/layout-menu.png" alt="Bridge Meter layout save and restore menu">
+          </figure>
+          <figure class="manual-media wide layout-preview">
+            <img src="../../../assets/gakkey-lab/layout-sets.gif" alt="Restoring Bridge Meter layouts">
+          </figure>
+          <p class="manual-note">
+            Layout sets save each panel's position and size. They do not save the display mode or whether panels are detached.
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="vu-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>VU Settings</h2>
+            <p>
+              Choose the needle motion from Settings > Needle.
+              In addition to Preset A / B, you can save and use your own custom presets.
+            </p>
+          </div>
+          <figure class="manual-media wide">
+            <img src="../../../assets/gakkey-lab/needle-settings.gif" alt="Bridge Meter Needle settings menu">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Preset A / B</th>
+                <td>Choose a needle motion preset</td>
+              </tr>
+              <tr>
+                <th>Edit / Create Needle Preset...</th>
+                <td>Start editing from the currently selected preset</td>
+              </tr>
+              <tr>
+                <th>Save As...</th>
+                <td>Name and save the customized settings</td>
+              </tr>
+              <tr>
+                <th>Manage Needle Presets...</th>
+                <td>Rename or delete custom presets.</td>
+              </tr>
+            </tbody>
+          </table>
+          <figure class="manual-media medium">
+            <img src="../../../assets/gakkey-lab/needle-settings-panel.png" alt="Bridge Meter Needle Tuning panel">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Rise Speed</th>
+                <td>Higher values make the needle react faster upward.</td>
+              </tr>
+              <tr>
+                <th>Rise Damping</th>
+                <td>Higher values dampen upward movement and reduce overshoot or bounce.</td>
+              </tr>
+              <tr>
+                <th>Return Speed</th>
+                <td>Higher values make the needle return downward faster.</td>
+              </tr>
+              <tr>
+                <th>Return Damping</th>
+                <td>Higher values dampen downward movement and reduce undershoot or bounce.</td>
+              </tr>
+              <tr>
+                <th>Low Bounce</th>
+                <td>Controls the small bounce when the needle returns near 0 VU. Higher values make it easier for the needle to pass slightly beyond 0 as it settles back.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="loudness-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>Loudness Settings</h2>
+            <p>
+              Right-click or Control-click the loudness panel to open the loudness display settings menu.
+            </p>
+          </div>
+          <div class="manual-detail-split">
+            <figure class="manual-media">
+              <img src="../../../assets/gakkey-lab/loudness-menu.png" alt="Bridge Meter loudness settings menu">
+            </figure>
+            <div class="manual-detail-copy">
+              <section class="manual-detail-block">
+                <h3>Loudness Display</h3>
+                <p>Choose what appears on the left side of the loudness display.</p>
+                <table class="manual-operation-table">
+                  <tbody>
+                    <tr>
+                      <th>Left: Momentary LUFS</th>
+                      <td>Shows Momentary Loudness, useful for checking loudness over a short time window.</td>
+                    </tr>
+                    <tr>
+                      <th>Left: True Peak dBTP</th>
+                      <td>Shows the estimated True Peak. Use it as a guide for peaks that account for inter-sample peaks.</td>
+                    </tr>
+                    <tr>
+                      <th>Left: Sample Peak dBFS</th>
+                      <td>Shows Sample Peak, the peak level based on actual sample values.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section class="manual-detail-block">
+                <h3>Peak Hold</h3>
+                <p>Choose how peak values are held.</p>
+                <table class="manual-operation-table">
+                  <tbody>
+                    <tr>
+                      <th>Off</th>
+                      <td>Do not use peak hold.</td>
+                    </tr>
+                    <tr>
+                      <th>Over Only</th>
+                      <td>Hold peaks only when they go over 0.</td>
+                    </tr>
+                    <tr>
+                      <th>Max Hold</th>
+                      <td>Hold the maximum peak value detected.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section class="manual-detail-block manual-detail-inline">
+                <figure class="manual-media">
+                  <img src="../../../assets/gakkey-lab/peak-hold-reset.png" alt="Bridge Meter Peak Hold reset display">
+                </figure>
+                <div>
+                  <h3>Reset Peak Hold</h3>
+                  <p>
+                    Click near the hold lamp or near the +/- display to reset peak hold.<br>
+                    Even when the display reads 0.0, a value that is internally not over 0 dB is shown with a green lamp, while a value slightly over 0 dB is shown as +0.0 with a red lamp.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Loudness Appearance</h3>
+              <p>Adjust the appearance and color display of the loudness panel.</p>
+              <figure class="manual-media wide">
+                <img src="../../../assets/gakkey-lab/loudness-appearance.gif" alt="Bridge Meter Loudness Appearance settings">
+              </figure>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Display</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Glass</th>
+                    <td>Adjusts the density of the glass display over the meter. Higher values make it darker and more opaque; lower values make it closer to transparent.</td>
+                  </tr>
+                  <tr>
+                    <th>Text</th>
+                    <td>Adjusts the brightness of loudness numbers. Higher values make the text brighter.</td>
+                  </tr>
+                  <tr>
+                    <th>Show Peak Numbers Red When Over</th>
+                    <td>When the peak value goes over the threshold, the peak number is shown in red as well as the peak lamp.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Color Fade</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Enable Color Fade</th>
+                    <td>Enables color display based on the loudness value.</td>
+                  </tr>
+                  <tr>
+                    <th>Apply To</th>
+                    <td>Choose where the color display is applied. The default, Numbers Only, applies it only to the numbers.</td>
+                  </tr>
+                  <tr>
+                    <th>LUFS Preview</th>
+                    <td>Preview how loudness values will change color with the current settings. The upper row shows LUFS values, and the lower row shows values relative to Ref.</td>
+                  </tr>
+                  <tr>
+                    <th>Blue / Green / Yellow / Red</th>
+                    <td>Set the threshold for each color. Values are relative to Ref. Click a color label to enable or disable that color.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Fade Amount</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>White -> Blue<br>Blue -> Green<br>Green -> Yellow<br>Yellow -> Red</th>
+                    <td>
+                      Adjust how smoothly the display changes between colors.
+                      Higher values make the transition to the next color slower and smoother.
+                      Lower values make the color changes more distinct.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Peak Hold Colors</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Hold Lamp Color</th>
+                    <td>Choose the lamp color used during peak hold.</td>
+                  </tr>
+                  <tr>
+                    <th>Apply Color To Peak Numbers</th>
+                    <td>Apply the same color as the hold lamp to the peak numbers.</td>
+                  </tr>
+                  <tr>
+                    <th>Reset All</th>
+                    <td>Reset the loudness appearance settings to their defaults.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="analyzer-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>Analyzer Settings</h2>
+            <p>
+              The Analyzer display is scaled for readability based on the current Reference Level.
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../../assets/gakkey-lab/analyzer-overview.png" alt="Bridge Meter Analyzer display">
+          </figure>
+          <p class="manual-note">
+            The left side shows the Lissajous display, the bottom shows the phase meter, and the right side shows the spectrum analyzer.<br>
+            Move the mouse over the spectrum analyzer to check the frequency at that position and the dB scale corresponding to the cursor height.
+          </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Lissajous Settings</h3>
+              <p>
+                Right-click or Control-click the analyzer panel to open the analyzer display settings menu.
+                The Lissajous display includes additional Auto Gain and Input Trim settings.
+              </p>
+              <figure class="manual-media large">
+                <img src="../../../assets/gakkey-lab/lissajous-settings.png" alt="Bridge Meter Lissajous settings">
+              </figure>
+            </section>
+            <section class="manual-detail-block">
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Auto Gain</th>
+                    <td>Automatically adjusts the gain of the Lissajous display according to the input level. Small signals are lifted for visibility, while large signals are kept from becoming too large on screen.</td>
+                  </tr>
+                  <tr>
+                    <th>Input Trim</th>
+                    <td>Manually adjusts the signal level going into the Lissajous display. Even when Auto Gain is enabled, you can fine-tune the final display size to your preference.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+          <p class="manual-note">
+            The Lissajous input level is adjusted in this order: automatic scale based on Reference Level → Auto Gain → Input Trim.
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

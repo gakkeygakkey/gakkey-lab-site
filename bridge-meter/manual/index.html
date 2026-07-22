@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bridge Meter Web Manual | GAKKEY LAB</title>
+    <meta
+      name="description"
+      content="Bridge MeterのWebマニュアル。入力の選び方、表示切り替え、各メーター表示、Bridge Pluginの使い方をまとめています。"
+    >
+    <link rel="canonical" href="https://lab.gakkey.com/bridge-meter/manual/">
+    <link rel="alternate" hreflang="ja" href="https://lab.gakkey.com/bridge-meter/manual/">
+    <link rel="alternate" hreflang="en" href="https://lab.gakkey.com/en/bridge-meter/manual/">
+    <link rel="alternate" hreflang="x-default" href="https://lab.gakkey.com/bridge-meter/manual/">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/gakkey-lab/favicon.png?v=3">
+    <link rel="shortcut icon" href="/favicon.ico?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/gakkey-lab/apple-touch-icon.png?v=3">
+    <link rel="stylesheet" href="../../gakkey-lab.css">
+    <script defer src="/analytics.js"></script>
+  </head>
+  <body class="manual-page">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="GAKKEY LAB">
+        <img src="../../assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
+      </a>
+      <div class="topbar-controls">
+        <nav aria-label="Main navigation">
+          <span class="nav-group nav-apps">
+            <a href="../../#apps">Apps</a>
+            <a href="../../manuals/" aria-current="page">Manuals</a>
+            <a href="../../#download">Download</a>
+          </span>
+          <span class="nav-group nav-quick">
+            <a href="../../quick-actions/">Quick Actions</a>
+          </span>
+        </nav>
+        <div class="language-switch" aria-label="Language">
+          <a class="active" href="./" lang="ja" aria-current="page">日本語</a>
+          <a href="../../en/bridge-meter/manual/" lang="en">English</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="manual-shell">
+      <aside class="manual-toc" aria-label="目次">
+        <a class="manual-toc-brand" href="#">
+          <img src="../../assets/gakkey-lab/bridge-meter-icon.png" alt="">
+          <span>Bridge Meter</span>
+        </a>
+        <nav>
+          <span>Quick Manual</span>
+          <a href="#inputs">入力を選ぶ</a>
+          <a href="#meter-display">メーター表示切り替え</a>
+          <a href="#reference-level">リファレンスレベルの設定</a>
+          <a href="#panels">パネル分離</a>
+          <a href="#bridge-plugin">Bridge Plugin</a>
+          <span>Detailed Manual</span>
+          <a href="#layout-sets">レイアウトセット</a>
+          <a href="#vu-settings">VU設定</a>
+          <a href="#loudness-settings">ラウドネス設定</a>
+          <a href="#analyzer-settings">Analyzer設定</a>
+        </nav>
+      </aside>
+
+      <div class="manual-content" id="top">
+        <section class="manual-hero">
+          <p class="eyebrow">Web Manual</p>
+          <h1>Bridge Meter<br>操作マニュアル</h1>
+          <p>
+            Bridge Meterは、作業画面に小さく置いて使うmacOS用メーターです。
+            Macから出ている音、オーディオ入力、Bridge Pluginからの信号を切り替えて、
+            VU、ラウドネス、位相、スペクトラムを確認できます。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="inputs">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Input</p>
+            <h2>入力を選ぶ</h2>
+            <p>
+              入力は、Bridge Meterのメニューから選びます。
+              Macから出ている音をすぐに見る場合は「System Audio Out」を選択します。
+              Bridge Pluginを使うとDAWから直接受信できるため、他のアプリの音が混ざりません。
+            </p>
+          </div>
+          <figure class="manual-media wide">
+            <img src="../../assets/gakkey-lab/bridge-input-menu.png" alt="Bridge MeterのInputメニュー">
+          </figure>
+          <div class="manual-point-list">
+            <article>
+              <strong>System Audio Out</strong>
+              <span>Macから出ている音をそのままメータリングします。</span>
+            </article>
+            <article>
+              <strong>System Audio Input</strong>
+              <span>Macに接続した入力デバイスの信号を確認します。</span>
+            </article>
+            <article>
+              <strong>Bridge Plugin</strong>
+              <span>DAWからの表示用信号を低遅延で受信します。</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="meter-display">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Meter Display</p>
+            <h2>メーター部分をダブルクリックで表示を切り替える</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>ダブルクリック</th>
+                  <td>VU / Loudnessを切り替え</td>
+                </tr>
+                <tr>
+                  <th>⌘ + ダブルクリック</th>
+                  <td>Analyzerに切り替え</td>
+                </tr>
+                <tr>
+                  <th>Analyzerから戻る</th>
+                  <td>ダブルクリックでVUへ</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../assets/gakkey-lab/meter-switching.gif" alt="Bridge Meterの表示切り替え">
+            </figure>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="reference-level">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Reference</p>
+            <h2>リファレンスレベルの設定</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>右クリック / Controlクリック</th>
+                  <td>リファレンスレベルを選択</td>
+                </tr>
+                <tr>
+                  <th>Edit Custom...</th>
+                  <td>Custom値を0.1 dB刻みで変更</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../assets/gakkey-lab/reference-level-menu.png" alt="Bridge MeterのReference Levelメニュー">
+            </figure>
+          </div>
+        </section>
+
+        <section class="manual-section" id="panels">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Panels</p>
+            <h2>パネルを分離する</h2>
+          </div>
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th>Shift + ダブルクリック</th>
+                  <td>表示中のLoudnessまたはAnalyzerを分離</td>
+                </tr>
+                <tr>
+                  <th>分離パネルを<br>Shift + ダブルクリック</th>
+                  <td>Bridge Meter本体へ戻す</td>
+                </tr>
+                <tr>
+                  <th>⌘ + Shift + ダブルクリック</th>
+                  <td>LoudnessとAnalyzerを一括分離</td>
+                </tr>
+                <tr>
+                  <th>分離パネルを<br>⌘ + Shift + ダブルクリック</th>
+                  <td>まとめてBridge Meter本体へ戻す</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media compact">
+              <img src="../../assets/gakkey-lab/panel-detach.gif" alt="Bridge Meterのパネル分離操作">
+            </figure>
+          </div>
+          <p class="manual-note">
+            まとめて戻す時は、⌘ + Shift + ダブルクリックしたウインドウが合体後に表示されます。
+          </p>
+        </section>
+
+        <section class="manual-section" id="bridge-plugin">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Bridge Plugin</p>
+            <h2>Bridge Pluginから受信する</h2>
+            <p>
+              AAX / VST3 / AU対応のBridge PluginをDAWに挿すと、
+              Bridge MeterでDAWからの表示用信号を直接受信できます。
+              プラグインはメーター表示用の信号だけを送信し、音声そのものは変更しません。
+            </p>
+          </div>
+          <figure class="manual-media framed">
+            <img src="../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge PluginのConnect Meterボタン">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Connect Meterボタンを押す</th>
+                <td>Bridge Meterを起動し、入力をBridge Pluginに切り替え</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            Bridge Meterがすでに起動している場合も、ボタンを押すことで入力がBridge Pluginに切り替わります。<br>
+            Pluginがなくなった時、元の入力がSystem Audio Out / Inputなら、その入力へ戻ります。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="layout-sets">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>レイアウトセット</h2>
+            <p>
+              Windowメニューから、現在のパネル位置とサイズをレイアウトとして保存できます。
+              保存したレイアウトはメニューまたはショートカットで復元できます。
+            </p>
+          </div>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Save Layout</th>
+                <td>現在のパネル位置とサイズを選んだ番号に保存</td>
+              </tr>
+              <tr>
+                <th>Layout 1〜5</th>
+                <td>保存したレイアウトを復元</td>
+              </tr>
+              <tr>
+                <th>⌘ + 1〜5</th>
+                <td>保存したレイアウトをショートカットで復元</td>
+              </tr>
+            </tbody>
+          </table>
+          <figure class="manual-media wide">
+            <img src="../../assets/gakkey-lab/layout-menu.png" alt="Bridge Meterのレイアウト保存と復元メニュー">
+          </figure>
+          <figure class="manual-media wide layout-preview">
+            <img src="../../assets/gakkey-lab/layout-sets.gif" alt="Bridge Meterのレイアウト復元">
+          </figure>
+          <p class="manual-note">
+            レイアウトセットに保存されるのは、各パネルの位置とサイズです。表示モードや分離状態そのものは保存されません。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="vu-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>VU設定</h2>
+            <p>
+              針の動きは、SettingsメニューのNeedleから選択できます。
+              Preset A / Bのほか、自分でカスタマイズしたプリセットも保存して使えます。
+            </p>
+          </div>
+          <figure class="manual-media wide">
+            <img src="../../assets/gakkey-lab/needle-settings.gif" alt="Bridge MeterのNeedle設定メニュー">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Preset A / B</th>
+                <td>針の動きのプリセットを選択</td>
+              </tr>
+              <tr>
+                <th>Edit / Create Needle Preset...</th>
+                <td>現在選択されているプリセットから編集を開始</td>
+              </tr>
+              <tr>
+                <th>Save As...</th>
+                <td>カスタマイズした設定に名前をつけて保存</td>
+              </tr>
+              <tr>
+                <th>Manage Needle Presets...</th>
+                <td>カスタムプリセットのリネームや削除ができます。</td>
+              </tr>
+            </tbody>
+          </table>
+          <figure class="manual-media medium">
+            <img src="../../assets/gakkey-lab/needle-settings-panel.png" alt="Bridge MeterのNeedle Tuningパネル">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Rise Speed</th>
+                <td>数値が大きいほど、針が上方向へ速く反応します。</td>
+              </tr>
+              <tr>
+                <th>Rise Damping</th>
+                <td>数値が大きいほど上方向の動きが抑えられ、跳ね返りや飛び出しが少なくなります。</td>
+              </tr>
+              <tr>
+                <th>Return Speed</th>
+                <td>数値が大きいほど、針が下方向へ速く戻ります。</td>
+              </tr>
+              <tr>
+                <th>Return Damping</th>
+                <td>数値が大きいほど下方向の動きが抑えられ、戻りすぎや跳ね返りが少なくなります。</td>
+              </tr>
+              <tr>
+                <th>Low Bounce</th>
+                <td>0 VU付近へ戻った時の小さな跳ね返り量です。数値が大きいほど、0を少し越えて戻るような動きが出やすくなります。</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="loudness-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>ラウドネス設定</h2>
+            <p>
+              ラウドネスパネルを右クリック、またはControlクリックすると、
+              ラウドネス表示の設定メニューが開きます。
+            </p>
+          </div>
+          <div class="manual-detail-split">
+            <figure class="manual-media">
+              <img src="../../assets/gakkey-lab/loudness-menu.png" alt="Bridge Meterのラウドネス設定メニュー">
+            </figure>
+            <div class="manual-detail-copy">
+              <section class="manual-detail-block">
+                <h3>Loudness Display</h3>
+                <p>ラウドネス表示時に、左側へ表示する値を選択します。</p>
+                <table class="manual-operation-table">
+                  <tbody>
+                    <tr>
+                      <th>Left: Momentary LUFS</th>
+                      <td>Momentary Loudnessを表示します。短い時間範囲でのラウドネスを確認できます。</td>
+                    </tr>
+                    <tr>
+                      <th>Left: True Peak dBTP</th>
+                      <td>True Peak（推定値）を表示します。サンプル間ピークを考慮したピーク値の目安として確認できます。</td>
+                    </tr>
+                    <tr>
+                      <th>Left: Sample Peak dBFS</th>
+                      <td>Sample Peakを表示します。実際のサンプル値上のピークレベルを確認できます。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section class="manual-detail-block">
+                <h3>Peak Hold</h3>
+                <p>ピーク表示のホールド動作を選択します。</p>
+                <table class="manual-operation-table">
+                  <tbody>
+                    <tr>
+                      <th>Off</th>
+                      <td>ピークホールドを使用しません。</td>
+                    </tr>
+                    <tr>
+                      <th>Over Only</th>
+                      <td>0を超えた場合のみピークをホールドします。</td>
+                    </tr>
+                    <tr>
+                      <th>Max Hold</th>
+                      <td>検出された最大ピーク値をホールドします。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section class="manual-detail-block manual-detail-inline">
+                <figure class="manual-media">
+                  <img src="../../assets/gakkey-lab/peak-hold-reset.png" alt="Bridge MeterのPeak Holdリセット表示">
+                </figure>
+                <div>
+                  <h3>Peak Holdのリセット</h3>
+                  <p>
+                    ホールドランプ付近、または+/-表示付近をクリックすると、ピークホールドをリセットできます。<br>
+                    表示上は同じ0.0でも、内部的に0 dBを超えていない場合は緑ランプ、0 dBをわずかに超えた場合は+0.0と赤ランプで表示されます。
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Loudness Appearance</h3>
+              <p>ラウドネス表示の見た目とカラー表示を調整します。</p>
+              <figure class="manual-media wide">
+                <img src="../../assets/gakkey-lab/loudness-appearance.gif" alt="Bridge MeterのLoudness Appearance設定">
+              </figure>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Display</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Glass</th>
+                    <td>メーター全体のガラス表示の濃さを調整します。数値が大きいほど暗く濃い表示になり、数値が小さいほど透明に近くなります。</td>
+                  </tr>
+                  <tr>
+                    <th>Text</th>
+                    <td>ラウドネス数値の明るさを調整します。数値が大きいほど文字が明るく表示されます。</td>
+                  </tr>
+                  <tr>
+                    <th>Show Peak Numbers Red When Over</th>
+                    <td>ピーク値が基準を超えた時、ピークランプだけではなくピーク数値も赤く表示します。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Color Fade</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Enable Color Fade</th>
+                    <td>ラウドネス値に応じたカラー表示を有効にします。</td>
+                  </tr>
+                  <tr>
+                    <th>Apply To</th>
+                    <td>カラー表示を適用する範囲を選択します。デフォルトのNumbers Onlyでは数値のみに適用されます。</td>
+                  </tr>
+                  <tr>
+                    <th>LUFS Preview</th>
+                    <td>現在の設定で、ラウドネス値がどのように色変化するかを確認できます。上段はLUFS値、下段はRefを基準にした相対値です。</td>
+                  </tr>
+                  <tr>
+                    <th>Blue / Green / Yellow / Red</th>
+                    <td>各色へ切り替わる基準値を設定します。値はRefに対する相対値です。色ラベルをクリックすると、その色の有効 / 無効を切り替えられます。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Fade Amount</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>White -> Blue<br>Blue -> Green<br>Green -> Yellow<br>Yellow -> Red</th>
+                    <td>
+                      各色の間をどの程度なめらかに変化させるかを調整します。
+                      数値が大きいほど、次の色へゆっくり滑らかに変化します。
+                      数値が小さいほど、色の切り替わりがはっきりします。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="manual-detail-block">
+              <h3>Peak Hold Colors</h3>
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Hold Lamp Color</th>
+                    <td>ピークホールド時のランプ色を選択します。</td>
+                  </tr>
+                  <tr>
+                    <th>Apply Color To Peak Numbers</th>
+                    <td>ピーク数値にもホールドランプと同じ色を適用します。</td>
+                  </tr>
+                  <tr>
+                    <th>Reset All</th>
+                    <td>ラウドネス表示の外観設定を初期値に戻します。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="analyzer-settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>Analyzer設定</h2>
+            <p>
+              アナライザー表示は、現在のReference Levelに合わせて見やすいスケールに調整されます。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/analyzer-overview.png" alt="Bridge MeterのAnalyzer表示">
+          </figure>
+          <p class="manual-note">
+            左側にはリサージュ表示、下部には位相メーター、右側にはスペクトラムアナライザーを表示します。<br>
+            スペクトラムアナライザー上にマウスを重ねると、その位置の周波数と、カーソル高さに対応するdBスケールを確認できます。
+          </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Lissajous設定</h3>
+              <p>
+                アナライザーパネルを右クリック、またはControlクリックすると、アナライザー表示の設定メニューが開きます。
+                リサージュ表示には、Auto GainとInput Trimの追加設定があります。
+              </p>
+              <figure class="manual-media large">
+                <img src="../../assets/gakkey-lab/lissajous-settings.png" alt="Bridge MeterのLissajous設定">
+              </figure>
+            </section>
+            <section class="manual-detail-block">
+              <table class="manual-operation-table">
+                <tbody>
+                  <tr>
+                    <th>Auto Gain</th>
+                    <td>入力レベルに応じてリサージュ表示のゲインを自動調整します。小さい信号は見やすく持ち上げ、大きい信号は表示が大きくなりすぎないように抑えます。</td>
+                  </tr>
+                  <tr>
+                    <th>Input Trim</th>
+                    <td>リサージュ表示に入る信号レベルを手動で調整します。Auto Gainを使用している場合でも、最終的な表示サイズを好みに合わせて微調整できます。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+          <p class="manual-note">
+            リサージュ表示の入力レベルは、Reference Levelに応じた自動スケール → Auto Gain → Input Trim の順に調整されます。
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
