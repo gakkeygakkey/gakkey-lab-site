@@ -20,7 +20,7 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="GAKKEY LAB">
+      <a class="brand" href="#" aria-label="GAKKEY LAB">
         <img src="../assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
       </a>
       <div class="topbar-controls">
@@ -50,37 +50,52 @@
             I make macOS apps for my own creative workflow.<br>
             If they look useful to you, you are welcome to give them a try.
           </p>
-          <div class="hero-actions">
-            <a class="hero-button" href="#apps">Explore the tools</a>
-            <a class="hero-button secondary-button" href="#download">Download</a>
-          </div>
-        </div>
-
-        <div class="lab-board" aria-label="macOS apps and Quick Actions made at GAKKEY LAB">
-          <article class="board-card board-bridge">
-            <img src="../assets/gakkey-lab/bridge-meter-icon.png" alt="">
-            <span>Bridge Meter</span>
-            <strong>Metering</strong>
-          </article>
-          <article class="board-card board-rtc">
-            <img src="../assets/gakkey-lab/rtc-icon.png" alt="">
-            <span>Relative Time Counter</span>
-            <strong>1:32</strong>
-          </article>
-          <article class="board-card board-note">
-            <img src="../assets/gakkey-lab/side-note-icon.png" alt="">
-            <span>Side Note</span>
-            <strong>AutoHide</strong>
-          </article>
-          <article class="board-card board-quick">
-            <img src="../assets/gakkey-lab/quick-actions/color-folder-icon.png" alt="">
-            <span>Quick Actions</span>
-            <strong>Finder</strong>
-          </article>
         </div>
       </section>
 
-      <section class="app-overview" id="apps">
+      <section class="tool-showcase" id="apps">
+        <div class="tool-showcase-inner">
+          <div class="hero-app-grid" aria-label="macOS apps and Quick Actions made at GAKKEY LAB">
+            <a class="app-card featured-card" href="#bridge-meter">
+              <img src="../assets/gakkey-lab/bridge-meter-icon.png" alt="Bridge Meter icon">
+              <div>
+                <span class="app-kind">Metering</span>
+                <h3>Bridge Meter</h3>
+                <p>VU, loudness, phase, and spectrum analysis in your workspace.</p>
+              </div>
+            </a>
+
+          <a class="app-card rtc-card" href="#rtc">
+            <img src="../assets/gakkey-lab/rtc-icon.png" alt="Relative Time Counter icon">
+            <div>
+              <span class="app-kind">DAW time tool</span>
+              <h3>Relative Time Counter</h3>
+              <p>A relative counter that lets song or bounce starts become 0:00.</p>
+            </div>
+          </a>
+
+          <a class="app-card note-card" href="#side-note">
+            <img src="../assets/gakkey-lab/side-note-icon.png" alt="Side Note icon">
+            <div>
+              <span class="app-kind">Floating work tool</span>
+              <h3>Side Note</h3>
+              <p>Keep text, PDFs, and images close at hand while you work.</p>
+            </div>
+          </a>
+
+          <a class="app-card quick-card" href="quick-actions/">
+            <img class="quick-action-icon" src="../assets/gakkey-lab/quick-actions/color-folder-icon.png" alt="Color Folder Quick Actions icon">
+            <div>
+              <span class="app-kind">Finder Quick Actions</span>
+              <h3>Color Folder Quick Actions</h3>
+              <p>Apply colored folder icons to selected folders in Finder.</p>
+            </div>
+          </a>
+        </div>
+        </div>
+      </section>
+
+      <section class="app-overview">
         <div class="app-grid">
           <a class="app-card featured-card" href="#bridge-meter">
             <img src="../assets/gakkey-lab/bridge-meter-icon.png" alt="Bridge Meter icon">
@@ -117,7 +132,7 @@
             <img src="../assets/gakkey-lab/bridge-meter-icon.png" alt="">
             <div>
               <p class="eyebrow">Bridge Meter &amp; Bridge Plugin</p>
-              <h2>Keep your meters<br>small and always<br>in view.</h2>
+              <h2>A compact meter<br>made to stay in view.</h2>
             </div>
           </div>
           <p class="product-intro">
@@ -164,7 +179,7 @@
           </figure>
           <div class="detail-copy">
             <p class="eyebrow">Flexible panels</p>
-            <h3>Put the panels you need wherever you like.</h3>
+            <h3>Detach panels you want<br>to view together.</h3>
             <p>
               The loudness, Lissajous, and spectrum panels can be detached temporarily.
               Reference Level can also be adjusted to suit your workflow.

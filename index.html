@@ -20,7 +20,7 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="GAKKEY LAB">
+      <a class="brand" href="#" aria-label="GAKKEY LAB">
         <img src="assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
       </a>
       <div class="topbar-controls">
@@ -51,37 +51,52 @@
             そんなmacOSアプリを作っています。<br>
             使ってみたい方へ、ちょっとおすそわけ。
           </p>
-          <div class="hero-actions">
-            <a class="hero-button" href="#apps">ツールを見る</a>
-            <a class="hero-button secondary-button" href="#download">ダウンロード</a>
-          </div>
-        </div>
-
-        <div class="lab-board" aria-label="GAKKEY LABで制作中のmacOSアプリとQuick Actions">
-          <article class="board-card board-bridge">
-            <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
-            <span>Bridge Meter</span>
-            <strong>Metering</strong>
-          </article>
-          <article class="board-card board-rtc">
-            <img src="assets/gakkey-lab/rtc-icon.png" alt="">
-            <span>Relative Time Counter</span>
-            <strong>1:32</strong>
-          </article>
-          <article class="board-card board-note">
-            <img src="assets/gakkey-lab/side-note-icon.png" alt="">
-            <span>Side Note</span>
-            <strong>AutoHide</strong>
-          </article>
-          <article class="board-card board-quick">
-            <img src="assets/gakkey-lab/quick-actions/color-folder-icon.png" alt="">
-            <span>Quick Actions</span>
-            <strong>Finder</strong>
-          </article>
         </div>
       </section>
 
-      <section class="app-overview" id="apps">
+      <section class="tool-showcase" id="apps">
+        <div class="tool-showcase-inner">
+          <div class="hero-app-grid" aria-label="GAKKEY LABで公開しているmacOSアプリとQuick Actions">
+            <a class="app-card featured-card" href="#bridge-meter">
+              <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="Bridge Meter icon">
+              <div>
+                <span class="app-kind">Metering</span>
+                <h3>Bridge Meter</h3>
+                <p>VU、ラウドネス、位相、スペクトラムを作業画面に。</p>
+              </div>
+            </a>
+
+          <a class="app-card rtc-card" href="#rtc">
+            <img src="assets/gakkey-lab/rtc-icon.png" alt="Relative Time Counter icon">
+            <div>
+              <span class="app-kind">DAW time tool</span>
+              <h3>Relative Time Counter</h3>
+              <p>曲頭やバウンス頭を0にできる相対時間カウンター。</p>
+            </div>
+          </a>
+
+          <a class="app-card note-card" href="#side-note">
+            <img src="assets/gakkey-lab/side-note-icon.png" alt="Side Note icon">
+            <div>
+              <span class="app-kind">Floating work tool</span>
+              <h3>Side Note</h3>
+              <p>テキスト、PDF、画像を作業中ずっとそばに。</p>
+            </div>
+          </a>
+
+          <a class="app-card quick-card" href="quick-actions/">
+            <img class="quick-action-icon" src="assets/gakkey-lab/quick-actions/color-folder-icon.png" alt="Color Folder Quick Actions icon">
+            <div>
+              <span class="app-kind">Finder Quick Actions</span>
+              <h3>Color Folder Quick Actions</h3>
+              <p>Finderで選択したフォルダに色付きアイコンを貼り付けます。</p>
+            </div>
+          </a>
+        </div>
+        </div>
+      </section>
+
+      <section class="app-overview">
         <div class="app-grid">
           <a class="app-card featured-card" href="#bridge-meter">
             <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="Bridge Meter icon">
@@ -118,7 +133,7 @@
             <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
             <div>
               <p class="eyebrow">Bridge Meter &amp; Bridge Plugin</p>
-              <h2>常時表示の<br>メーターを、<br>小さく配置。</h2>
+              <h2>常時表示しやすい<br>小さなメーター。</h2>
             </div>
           </div>
           <p class="product-intro">
@@ -164,7 +179,7 @@
           </figure>
           <div class="detail-copy">
             <p class="eyebrow">Flexible panels</p>
-            <h3>必要なパネルだけ、<br>好きな場所へ。</h3>
+            <h3>同時に見たいパネルは<br>分離できます。</h3>
             <p>
               ラウドネス、リサージュ、スペクトラムは一時的に分離表示できます。
               Reference Levelも用途に合わせて変更できます。

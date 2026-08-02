@@ -164,18 +164,20 @@ img {
 }
 
 .hero {
-  width: min(1180px, calc(100% - 44px));
-  min-height: calc(100vh - 68px);
-  margin: 0 auto;
+  min-height: min(460px, calc(76vh - 68px));
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1fr);
-  gap: 54px;
+  grid-template-columns: 1fr;
   align-items: center;
-  padding: 72px 0 88px;
+  align-content: center;
+  padding: 64px 0 54px;
 }
 
 .hero-content {
+  width: min(1180px, calc(100% - 44px));
+  max-width: 1080px;
+  margin: 0 auto;
   min-width: 0;
+  text-align: center;
 }
 
 .eyebrow {
@@ -203,8 +205,10 @@ p {
 }
 
 h1 {
-  max-width: 760px;
-  margin-bottom: 24px;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
   font-size: clamp(44px, 4.8vw, 58px);
   line-height: 1.02;
   letter-spacing: 0;
@@ -215,17 +219,64 @@ h1 span {
 }
 
 .lead {
-  max-width: 580px;
-  margin-bottom: 32px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
   color: #39413e;
   font-size: 18px;
-  line-height: 1.9;
+  line-height: 1.75;
+}
+
+.tool-showcase {
+  background: white;
+  border-top: 1px solid rgba(23, 111, 169, 0.16);
+  border-bottom: 1px solid rgba(23, 111, 169, 0.12);
+  padding: 72px 0 80px;
+}
+
+.tool-showcase-inner {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.tool-showcase .eyebrow {
+  margin-bottom: 22px;
+  color: #147ec2;
+  text-align: center;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
+}
+
+.hero-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hero-app-grid .app-card {
+  min-height: 250px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.hero-app-grid .app-card h3 {
+  min-height: 56px;
+}
+
+.hero-app-grid .app-card img {
+  width: 74px;
+  height: 74px;
+}
+
+.hero-app-grid .app-card .quick-action-icon {
+  width: 84px;
+  height: 64px;
 }
 
 .hero-button {
@@ -397,6 +448,7 @@ h1 span {
 }
 
 .app-overview {
+  display: none;
   padding: 96px 0;
 }
 
@@ -1996,6 +2048,10 @@ h1 span {
     grid-template-columns: 1fr;
   }
 
+  .hero-app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .lab-board {
     min-height: 520px;
   }
@@ -2115,6 +2171,19 @@ h1 span {
 
   .lab-board {
     display: none;
+  }
+
+  .hero-app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-app-grid .app-card {
+    min-height: 0;
+    grid-template-columns: 72px 1fr;
+  }
+
+  .hero-app-grid .app-card h3 {
+    min-height: 0;
   }
 
   .product {
