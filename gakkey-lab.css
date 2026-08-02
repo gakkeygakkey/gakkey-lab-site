@@ -751,6 +751,10 @@ h1 span {
   object-position: center;
 }
 
+.meter-modes figure:nth-child(3) img {
+  object-position: 25% center;
+}
+
 .meter-modes figcaption {
   display: grid;
   gap: 6px;
