@@ -232,7 +232,7 @@ h1 span {
   background: white;
   border-top: 1px solid rgba(23, 111, 169, 0.16);
   border-bottom: 1px solid rgba(23, 111, 169, 0.12);
-  padding: 72px 0 80px;
+  padding: 56px 0 52px;
 }
 
 .tool-showcase-inner {
@@ -674,6 +674,7 @@ h1 span {
 }
 
 .bridge-section {
+  margin-top: 24px;
   color: white;
   background:
     radial-gradient(circle at 88% 3%, rgba(255, 189, 86, 0.15), transparent 24%),
