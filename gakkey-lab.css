@@ -266,6 +266,31 @@ h1 span {
   grid-template-columns: 1fr;
   gap: 13px;
   padding: 20px;
+  color: #101818;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(39, 141, 221, 0.18);
+  box-shadow: 0 22px 46px rgba(42, 55, 58, 0.08);
+}
+
+.hero-app-grid .app-card.featured-card {
+  color: #101818;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(39, 141, 221, 0.18);
+}
+
+.hero-app-grid .app-card.rtc-card {
+  color: #101818;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(39, 141, 221, 0.18);
+}
+
+.hero-app-grid .app-card.note-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(39, 141, 221, 0.18);
+}
+
+.hero-app-grid .app-card.quick-card {
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .hero-app-grid .app-card h3 {
@@ -285,13 +310,19 @@ h1 span {
   height: 56px;
 }
 
-.hero-app-grid .app-kind {
+.hero-app-grid .app-card .app-kind {
+  color: var(--blue);
   font-size: 10px;
 }
 
 .hero-app-grid .app-card p {
   font-size: 14px;
   line-height: 1.55;
+}
+
+.hero-app-grid .featured-card p,
+.hero-app-grid .rtc-card p {
+  color: var(--muted);
 }
 
 .hero-button {
@@ -615,6 +646,10 @@ h1 span {
   color: var(--blue);
 }
 
+.hero-app-grid .app-card .app-kind {
+  color: var(--blue);
+}
+
 .quick-action-mark {
   position: relative;
   display: block;
@@ -674,7 +709,7 @@ h1 span {
 }
 
 .bridge-section {
-  margin-top: 24px;
+  margin-top: 60px;
   color: white;
   background:
     radial-gradient(circle at 88% 3%, rgba(255, 189, 86, 0.15), transparent 24%),
