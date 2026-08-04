@@ -27,6 +27,7 @@
         <nav aria-label="Main navigation">
           <span class="nav-group nav-apps">
             <a href="#apps" aria-current="page">Apps</a>
+            <a href="/manuals/">Manuals</a>
             <a href="#download">Download</a>
           </span>
           <span class="nav-group nav-quick">
@@ -44,10 +45,9 @@
       <section class="hero">
         <div class="hero-content">
           <p class="eyebrow">Small macOS tools lab</p>
-          <h1><span>あったらいいな！を</span><br>小さなツールに</h1>
+          <h1>Small tools for the little things<br>I wish I had.</h1>
           <p class="lead">
-            自分の制作環境で、欲しい！<br>
-            そんなmacOSアプリを作っています。<br>
+            自分の制作環境で欲しかったmacOSアプリを作っています。<br>
             使ってみたい方へ、ちょっとおすそわけ。
           </p>
         </div>
@@ -61,7 +61,7 @@
               <div>
                 <span class="app-kind">Metering</span>
                 <h3>Bridge Meter</h3>
-                <p>VU、ラウドネス、位相、スペクトラムを作業画面に。</p>
+                <p>VUメーター、ラウドネス、アナライザーを切り替え表示。</p>
               </div>
             </a>
 
@@ -79,7 +79,7 @@
             <div>
               <span class="app-kind">Floating work tool</span>
               <h3>Side Note</h3>
-              <p>テキスト、PDF、画像を作業中ずっとそばに。</p>
+              <p>テキストメモやPDFを最前面に表示。</p>
             </div>
           </a>
 
@@ -88,7 +88,7 @@
             <div>
               <span class="app-kind">Finder Quick Actions</span>
               <h3>Color Folder Quick Actions</h3>
-              <p>Finderで選択したフォルダに色付きアイコンを貼り付けます。</p>
+              <p>Finderで選択したフォルダの色を変更。</p>
             </div>
           </a>
         </div>
@@ -102,7 +102,7 @@
             <div>
               <span class="app-kind">Featured</span>
               <h3>Bridge Meter</h3>
-              <p>VU、ラウドネス、位相計、スペクトラムアナライザーを作業画面にビルトイン。</p>
+              <p>VUメーター、ラウドネス、アナライザーを切り替え表示。</p>
             </div>
           </a>
 
@@ -120,7 +120,7 @@
             <div>
               <span class="app-kind">Floating work tool</span>
               <h3>Side Note</h3>
-              <p>テキスト、PDF、画像を作業中ずっとそばに。</p>
+              <p>テキストメモやPDFを最前面に表示。</p>
             </div>
           </a>
         </div>
@@ -296,7 +296,7 @@
       <section class="download" id="download">
         <div class="download-heading">
           <img src="assets/gakkey-lab/package-icon.png" alt="">
-          <p class="eyebrow">Download</p>
+          <p class="eyebrow">Apps</p>
           <h2>ここから<br>ダウンロード。</h2>
           <p>3つのアプリはすべて無料です。</p>
           <p class="testing-note">
@@ -408,19 +408,19 @@
   const text = isEnglish
     ? {
         title: "Download",
-        free: "All three apps are free.",
+        free: "All apps are free to use.",
         manual: "Manual",
         tested: "Testing has focused primarily on Apple silicon Macs running macOS 15 Sequoia or later.",
-        bridgeMeta: "macOS Sonoma 14.2 or later / Universal Binary（Apple Silicon・Intel）",
-        commonMeta: "macOS 12 Monterey or later / Universal Binary（Apple Silicon・Intel）",
+        bridgeMeta: "macOS Sonoma 14.2 or later / Universal Binary (Apple silicon and Intel)",
+        commonMeta: "macOS 12 Monterey or later / Universal Binary (Apple silicon and Intel)",
         bridgeNotes: [
-          "Added color display and appearance settings for Loudness",
-          "Improved Lissajous display, with Auto Gain and Input Trim",
+          "Added color display options and consolidated appearance settings for Loudness",
+          "Improved the Lissajous display and added Auto Gain and Input Trim",
           "Added window size and panel layout features",
-          "Other CPU/rendering optimizations and manual updates"
+          "Other CPU and rendering optimizations, plus manual updates"
         ],
         sideNote: "Fixed a launch crash on macOS Tahoe",
-        quickActions: "Quick Actions downloads"
+        quickActions: "Download Quick Actions"
       }
     : {
         title: "ダウンロード",
@@ -486,7 +486,7 @@
         <div class="gl-download-heading">
           ${imageTag(images.box, "Download", "gl-download-box")}
           <div>
-            <div class="gl-download-eyebrow">DOWNLOAD</div>
+            <div class="gl-download-eyebrow">APPS</div>
             <h2>${text.title}</h2>
           </div>
         </div>
@@ -531,8 +531,8 @@
       </div>
 
       <a class="gl-download-quick-actions" href="${quickActions}">
-        <span>${text.quickActions}</span>
         ${imageTag(images.quickActions, "Quick Actions", "gl-download-qa-icon")}
+        <span>${text.quickActions}</span>
       </a>
     </div>`;
 
