@@ -59,13 +59,14 @@
           <a href="#vu-settings">VU設定</a>
           <a href="#loudness-settings">ラウドネス設定</a>
           <a href="#analyzer-settings">Analyzer設定</a>
+          <a href="#updates">更新履歴</a>
         </nav>
       </aside>
 
       <div class="manual-content" id="top">
         <section class="manual-hero">
           <p class="eyebrow">Web Manual</p>
-          <h1>Bridge Meter<br>操作マニュアル</h1>
+          <h1>Bridge Meter<br>マニュアル</h1>
           <p>
             Bridge Meterは、作業画面に小さく置いて使うmacOS用メーターです。
             Macから出ている音、オーディオ入力、Bridge Pluginからの信号を切り替えて、
@@ -100,6 +101,10 @@
               <span>DAWからの表示用信号を低遅延で受信します。</span>
             </article>
           </div>
+          <p class="manual-note">
+            ※System Audio Outの使用には、macOSの「システムオーディオ録音」権限が必要です。<br>
+            Bridge Meterは音声をメーター表示のためだけに使用し、録音・保存・外部送信は一切行いません。
+          </p>
         </section>
 
         <section class="manual-section manual-section-stack" id="meter-display">
@@ -512,6 +517,26 @@
           <p class="manual-note">
             リサージュ表示の入力レベルは、Reference Levelに応じた自動スケール → Auto Gain → Input Trim の順に調整されます。
           </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="updates">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Updates</p>
+            <h2>アップデートと更新履歴</h2>
+            <p>
+              Bridge MeterメニューまたはHelpメニューの「アップデートを確認…」から、最新版の有無を確認できます。
+            </p>
+          </div>
+
+          <figure class="manual-media medium framed">
+            <img src="../../assets/gakkey-lab/bridge-update-menu-ja.png" alt="Bridge Meterのアップデートメニュー">
+          </figure>
+
+          <p class="manual-note">
+            「アップデートを自動的に確認」がオンの場合、更新があるときに通知します。
+          </p>
+
+          <a class="product-download manual-release-link" href="https://github.com/gakkeygakkey/gakkey-lab-site/releases?q=bridge-meter&amp;expanded=true" target="_blank" rel="noopener">Bridge Meterの更新履歴を見る</a>
         </section>
       </div>
     </main>
