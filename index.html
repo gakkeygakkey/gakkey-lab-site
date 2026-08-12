@@ -305,16 +305,14 @@
           </p>
         </div>
         <div class="download-list">
-          <a class="download-item" id="download-bridge-meter" href="https://github.com/gakkeygakkey/gakkey-lab-site/releases/download/bridge-Meter-2026.7.22/Bridge-Meter-2026.7.22.dmg">
+          <a class="download-item" id="download-bridge-meter" href="https://github.com/gakkeygakkey/gakkey-lab-site/releases/download/bridge-Meter-2026.8.11/Bridge-Meter-2026.8.11.dmg">
             <img src="assets/gakkey-lab/bridge-meter-icon.png" alt="">
             <span>
               <strong>Bridge Meter</strong>
               <small>macOS Sonoma 14.2以降 / Universal Binary（Apple Silicon・Intel）</small>
-              <small class="release-version">Ver2026.7.22</small>
-              <small class="release-summary">ラウドネスのカラー表示を追加・外観設定を統合</small>
-              <small class="release-summary">リサージュ表示を改善。Auto Gain / Input Trimを追加</small>
-              <small class="release-summary">ウィンドウサイズ / パネルレイアウト機能を追加</small>
-              <small class="release-summary">その他、CPU・描画の最適化・マニュアル更新</small>
+              <small class="release-version">Ver2026.8.11</small>
+              <small class="release-summary">macOS 26 Tahoeで、Loudness Appearance画面最下部のボタンを押せない問題を修正</small>
+              <small class="release-summary">自動アップデート確認機能を追加</small>
             </span>
             <b>Download</b>
           </a>
@@ -415,10 +413,8 @@
         bridgeMeta: "macOS Sonoma 14.2 or later / Universal Binary (Apple silicon and Intel)",
         commonMeta: "macOS 12 Monterey or later / Universal Binary (Apple silicon and Intel)",
         bridgeNotes: [
-          "Added color display options and consolidated appearance settings for Loudness",
-          "Improved the Lissajous display and added Auto Gain and Input Trim",
-          "Added window size and panel layout features",
-          "Other CPU and rendering optimizations, plus manual updates"
+          "Fixed an issue on macOS 26 Tahoe that prevented the button at the bottom of the Loudness Appearance window from being clicked",
+          "Added automatic update checking"
         ],
         sideNote: "Fixed a launch crash on macOS Tahoe",
         quickActions: "Download Quick Actions"
@@ -431,10 +427,8 @@
         bridgeMeta: "macOS Sonoma 14.2以降 / Universal Binary（Apple Silicon・Intel）",
         commonMeta: "macOS 12 Monterey以降 / Universal Binary（Apple Silicon・Intel）",
         bridgeNotes: [
-          "ラウドネスのカラー表示を追加・外観設定を統合",
-          "リサージュ表示を改善。Auto Gain / Input Trimを追加",
-          "ウィンドウサイズ / パネルレイアウト機能を追加",
-          "その他、CPU・描画の最適化・マニュアル更新"
+          "macOS 26 Tahoeで、Loudness Appearance画面最下部のボタンを押せない問題を修正",
+          "自動アップデート確認機能を追加"
         ],
         sideNote: "macOS Tahoeでの起動時クラッシュを修正",
         quickActions: "Quick Actionsのダウンロードはこちら"
@@ -503,7 +497,7 @@
           id: "download-bridge-meter",
           icon: images.bridge,
           name: "Bridge Meter",
-          version: "2026.7.22",
+          version: "2026.8.11",
           meta: text.bridgeMeta,
           href: downloads.bridge,
           manualHref: bridgeManual,
@@ -689,7 +683,7 @@
       #download .gl-download-notes {
         margin-top: 12px;
         color: #1177b5;
-        font-size: clamp(13px, 1vw, 16px);
+        font-size: clamp(12px, 0.9vw, 14px);
         font-weight: 900;
         line-height: 1.55;
       }
