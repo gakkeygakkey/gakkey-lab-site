@@ -1663,6 +1663,65 @@ h1 span {
   grid-column: span 2;
 }
 
+.manual-shortcut-group {
+  grid-column: span 2;
+}
+
+.manual-shortcut-group h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.manual-shortcut-description {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.manual-subsection {
+  grid-column: span 2;
+}
+
+.manual-subsection h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.manual-subsection > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.manual-bullet-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.4em;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.manual-subsection-label {
+  margin: 18px 0 8px !important;
+  color: #151918 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  font-weight: 900 !important;
+}
+
+.manual-subsection .manual-note {
+  margin-top: 12px;
+}
+
 .manual-operation-table th,
 .manual-operation-table td {
   padding: 13px 0;
@@ -1761,6 +1820,10 @@ h1 span {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+}
+
+.manual-point-list.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .manual-point-list article {
