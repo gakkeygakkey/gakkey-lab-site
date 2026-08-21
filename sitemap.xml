@@ -37,6 +37,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://lab.gakkey.com/side-note/manual/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lab.gakkey.com/en/side-note/manual/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lab.gakkey.com/quick-actions/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
