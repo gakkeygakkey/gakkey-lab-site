@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relative Time Counter Web Manual | GAKKEY LAB</title>
+    <meta
+      name="description"
+      content="Relative Time CounterのWebマニュアル。初期設定、ゼロスタート、ロケート、設定の保存・復元、Auto Talkbackについてまとめています。"
+    >
+    <link rel="canonical" href="https://lab.gakkey.com/relative-time-counter/manual/">
+    <link rel="alternate" hreflang="ja" href="https://lab.gakkey.com/relative-time-counter/manual/">
+    <link rel="alternate" hreflang="en" href="https://lab.gakkey.com/assets/gakkey-lab/rtc-guide-en.pdf">
+    <link rel="alternate" hreflang="x-default" href="https://lab.gakkey.com/relative-time-counter/manual/">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/gakkey-lab/favicon.png?v=3">
+    <link rel="shortcut icon" href="/favicon.ico?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/gakkey-lab/apple-touch-icon.png?v=3">
+    <link rel="stylesheet" href="../../gakkey-lab.css">
+    <script defer src="/analytics.js"></script>
+  </head>
+  <body class="manual-page">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="GAKKEY LAB">
+        <img src="../../assets/gakkey-lab/logo.png" alt="GAKKEY LAB">
+      </a>
+      <div class="topbar-controls">
+        <nav aria-label="Main navigation">
+          <span class="nav-group nav-apps">
+            <a href="../../#apps">Apps</a>
+            <a href="../../manuals/" aria-current="page">Manuals</a>
+            <a href="../../#download">Download</a>
+          </span>
+          <span class="nav-group nav-quick">
+            <a href="../../quick-actions/">Quick Actions</a>
+          </span>
+        </nav>
+        <div class="language-switch" aria-label="Language">
+          <a class="active" href="./" lang="ja" aria-current="page">日本語</a>
+          <a href="../../en/relative-time-counter/manual/" lang="en">English</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="manual-shell">
+      <aside class="manual-toc" aria-label="目次">
+        <a class="manual-toc-brand" href="#">
+          <img src="../../assets/gakkey-lab/rtc-icon.png" alt="">
+          <span>Relative Time Counter</span>
+        </a>
+        <nav>
+          <span>Quick Manual</span>
+          <a href="#overview">概要</a>
+          <a href="#setup">使用するために必要な設定</a>
+          <a href="#zero-reset">任意の位置を0にする</a>
+          <a href="#locate">ロケート</a>
+          <span>Detailed Manual</span>
+          <a href="#basic-operation">基本操作</a>
+          <a href="#settings">設定パネル</a>
+          <a href="#settings-save">設定の保存・復元</a>
+          <a href="#startup-restore">起動時の設定復元</a>
+          <a href="#auto-talkback">Auto Talkback</a>
+        </nav>
+      </aside>
+
+      <div class="manual-content" id="top">
+        <section class="manual-hero">
+          <p class="eyebrow">Web Manual</p>
+          <h1>Relative Time Counter<br>マニュアル</h1>
+          <p>
+            MTC（MIDI Timecode）を受信し、任意の時間を00:00（ゼロスタート）にできる相対カウンターです。
+            TCフレーム上の実時間を表示できない23.976fps、29.97fps（ノンドロップ）でも、補正を入れることで実時間表示ができます。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="overview">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Overview</p>
+            <h2>概要</h2>
+            <p>
+              Relative Time Counter（以下、RTC）は、MTCを使ってDAWのタイムコードを受信し、指定した位置からの経過時間を表示します。
+            </p>
+            <p>
+              おまけ機能として「Auto Talkback機能」があり、MacBookなどの内蔵マイク、USB接続のマイク、Webカメラのマイクなどを、再生時（MTC受信時）に自動でミュートできます。
+              オンラインミックスチェックなどで、再生時にマイクをミュートする手間が省けます。
+            </p>
+          </div>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="setup">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Setup</p>
+            <h2>使用するために必要な設定</h2>
+            <p>
+              Relative Time Counterは、MTCおよびMMCに対応するDAWで使用できます。<br>
+              「Audio MIDI設定」でIAC Driverを有効にし、DAWのMTC送信先をIAC Driverに設定してください。<br>
+              RTCからロケートする場合は、DAW側でMMCロケートの受信を有効にし、デバイスIDを127に設定します。
+            </p>
+            <p>
+              以下では、Pro Toolsを使用する場合の設定方法を説明します。
+            </p>
+          </div>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Audio MIDI設定</th>
+                <td>MIDIスタジオでIACドライバーを有効にする（「装置はオンライン」のチェックマークをオン）。</td>
+              </tr>
+              <tr>
+                <th>Pro Tools：同期</th>
+                <td>
+                  「MTC Generator Port」に、IAC Driverを選択します。<br>
+                  ※RTCはIAC DriverのどのポートからもMTCを受信します。
+                </td>
+              </tr>
+              <tr>
+                <th>Pro Tools：マシンコントロール</th>
+                <td>ペリフェラル／マシンコントロールのMIDIマシンコントロールリモートを有効化（IDは127）。</td>
+              </tr>
+              <tr>
+                <th>Pro Toolsツールバー</th>
+                <td>同期を表示し、MTCボタンをオン。</td>
+              </tr>
+            </tbody>
+          </table>
+          <details class="manual-details">
+            <summary>設定手順を画像で確認する</summary>
+            <div class="manual-details-content">
+              <article class="manual-setup-step">
+                <div>
+                  <span>1</span>
+                  <h3>IAC Driverを有効にする</h3>
+                  <p>
+                    「Audio MIDI設定」で「ウインドウ」＞「MIDIスタジオを表示」と選択します。
+                    IAC Driverを開き、「Device is online」をオンにします。
+                    Ports欄に、ポートが1つ以上あることを確認してください。
+                  </p>
+                  <p>
+                    詳しい設定方法は、Appleの
+                    <a href="https://support.apple.com/ja-jp/guide/audio-midi-setup/ams1013/mac" target="_blank" rel="noopener">「MIDI情報をアプリ間で送信する」</a>
+                    を参照してください。
+                  </p>
+                </div>
+                <figure class="manual-media framed">
+                  <img src="../../assets/gakkey-lab/rtc-iac-driver.png" alt="IAC Driverを開き、Device is onlineをオンにする設定">
+                </figure>
+              </article>
+
+              <article class="manual-setup-step">
+                <div>
+                  <span>2</span>
+                  <h3>Pro Toolsのペリフェラルを設定する</h3>
+                  <p>
+                    「設定」＞「ペリフェラル」を開きます。
+                    「MTC Generator Port」に、IAC Driverを選択します。<br>
+                    ※RTCはIAC DriverのどのポートからもMTCを受信します。
+                  </p>
+                  <p>
+                    続いてMachine Controlを開き、「MIDI Machine Control Remote」のEnableをオンにして、IDを127にします。
+                  </p>
+                </div>
+                <figure class="manual-media framed">
+                  <img src="../../assets/gakkey-lab/rtc-pro-tools-peripherals.png" alt="Pro ToolsのSynchronizationとMachine Controlの設定">
+                </figure>
+              </article>
+
+              <article class="manual-setup-step">
+                <div>
+                  <span>3</span>
+                  <h3>MTC送信をオンにする</h3>
+                  <p>
+                    Pro ToolsツールバーでSynchronizationを表示し、MTCボタンをオンにします。
+                  </p>
+                </div>
+                <figure class="manual-media framed">
+                  <img src="../../assets/gakkey-lab/rtc-pro-tools-mtc.png" alt="Pro ToolsツールバーでSynchronizationを表示してMTCをオンにする操作">
+                </figure>
+              </article>
+            </div>
+          </details>
+          <p class="manual-note">
+            Audio MIDI設定は一度設定すれば、毎回の設定は不要です。<br>
+            Pro Toolsの設定はセッション設定になるため、セッション切り替えでMTC送信ポートなどが変更される場合があります。動作しない場合は設定を確認してください。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="zero-reset">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Quick Manual 01</p>
+            <h2>任意の位置をカウンター0にする</h2>
+            <p>
+              カウンターを0にしたいところから再生を開始し、MTCを読み込ませます。<br>
+              Relative Time Counterのウインドウを⌘（Command）キーを押しながらクリックします。<br>
+              これで設定は完了し、自動でRELATIVE表示に切り替わります。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-zero-reset.png" alt="Pro Toolsのマーカー位置から再生し、Relative Time CounterをCommandクリックして0に設定する例">
+          </figure>
+          <p class="manual-note">
+            ⌘クリックする前に、最後に再生を開始したところが0になります。<br>
+            Shift + クリックでABS / RELの表示を切り替えられます。どちらのモードでも⌘ + クリックは0リセットです。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="locate">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Quick Manual 02</p>
+            <h2>ロケート</h2>
+            <p>
+              Relative Time Counterのウインドウをダブルクリックすると入力パネルが開きます。
+              数字を連続入力し、パネル上部に整形された値を確認して、Enter（Return）キーでロケートします。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-locate.png" alt="Relative Time Counterの入力パネルから1分50秒へロケートする例">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>2500</th>
+                <td>25:00に整形し、25分へロケート。</td>
+              </tr>
+              <tr>
+                <th>11525</th>
+                <td>1:15:25に整形し、1時間15分25秒へロケート。</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            RELモードではREL値からABS値をフレーム単位で逆計算したTC値、ABSモードではストレートにTC値を使用します。<br>
+            MMCロケートは規格上、秒単位の処理となるため近似値に丸め込み処理をしています。ロケート結果にわずかな誤差があることをご了承ください。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="basic-operation">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Detailed Manual</p>
+            <h2>基本操作</h2>
+            <p>
+              本アプリの本体は「半透明の小さなカウンターウインドウ」のみです。このウインドウのクリックの仕方で操作します。
+            </p>
+          </div>
+          <figure class="manual-media medium">
+            <img src="../../assets/gakkey-lab/rtc-basic-window.png" alt="Relative Time Counterの半透明なカウンターウインドウ">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>⌘ + クリック</th>
+                <td>カウンターを0にする。最後に再生を開始した位置で0にリセットされます。</td>
+              </tr>
+              <tr>
+                <th>ダブルクリック</th>
+                <td>ロケート機能。数値入力後、Enterキーでロケート情報を送出します。</td>
+              </tr>
+              <tr>
+                <th>Shift + クリック</th>
+                <td>ABS / RELの表示切り替え。</td>
+              </tr>
+              <tr>
+                <th>右クリック<br>Control + クリック</th>
+                <td>設定パネルを表示し、補正機能のオン・オフなどを設定します。</td>
+              </tr>
+              <tr>
+                <th>Option + クリック</th>
+                <td>macOS標準の「クリックしたアプリケーションに切り替え、現在のアプリケーションを隠す」が機能します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="settings">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Settings</p>
+            <h2>設定パネル</h2>
+            <p>カウンターウインドウを右クリック（Controlクリック）すると表示されます。</p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-settings-panel-detail.png" alt="REL基準、動作モード、フレームレート補正、表示とPTSL SDKの設定パネル">
+          </figure>
+          <div class="manual-point-list two-columns">
+            <article>
+              <strong>REL基準設定</strong>
+              <span>REL = 0のAbsolute値を直接入力できます。Relative値も変更でき、任意のREL値を設定したオフセット表示も可能です。</span>
+            </article>
+            <article>
+              <strong>現在の動作モード</strong>
+              <span>受信したTCと補正のオン・オフにより、自動で設定された動作モードを表示します。</span>
+            </article>
+            <article>
+              <strong>フレームレート補正</strong>
+              <span>23.976fps、29.97fps（ノンドロップ）補正のオン・オフを設定します。</span>
+            </article>
+            <article>
+              <strong>表示 / SDK</strong>
+              <span>RELをフレームまで表示する設定と、PTSL SDK（Pro Tools Scripting SDK）を使用する設定です。</span>
+            </article>
+          </div>
+          <p class="manual-note">
+            MTCでは24と23.976、30と29.97ノンドロップを自動判別できません。セッションのTCレートに合わせて手動でオン・オフしてください。<br>
+            PTSL SDKを使用すると、上記のフレームレート判別を自動化できます（使用できるPro Toolsのバージョン要件があります）。
+          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="settings-save">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Save / Restore</p>
+            <h2>設定の保存機能（設定をテキストデータで保存・復元）</h2>
+            <p>
+              ABS値、REL値、23.976補正のオン・オフ状態、29.97ND補正のオン・オフ状態をテキストベースで保存できます。
+              カウンターをクリックし、⌘ + Cで現在の設定をテキストとしてクリップボードに格納します。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-settings-save.png" alt="Relative Time Counterの設定をPro Toolsのコメント欄に保存し、復元する手順">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>設定を保存</th>
+                <td>カウンターをクリックして⌘ + C。Pro Toolsのコメント欄やマーカー名などへ⌘ + Vでペーストします。</td>
+              </tr>
+              <tr>
+                <th>設定を復元</th>
+                <td>設定テキストを記号・数字を含めて丸ごとコピーし、カウンターをクリックして⌘ + Vでペーストします。</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="startup-restore">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Startup</p>
+            <h2>起動時に前回の設定を復元するオプション</h2>
+            <p>
+              起動時に、最後に使用した時の設定で復元できる機能です（デフォルトオン）。設定メニューのチェックマークでオン・オフできます。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-startup-restore.png" alt="起動時に前回の動作モードを復元する設定と確認画面">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>オン</th>
+                <td>起動時に毎回、復元するかどうか確認されます。</td>
+              </tr>
+              <tr>
+                <th>オフ</th>
+                <td>毎回ABSOLUTEで、オフセットなしのリセット状態で起動します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="auto-talkback">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Auto Talkback</p>
+            <h2>Auto Talkback機能</h2>
+            <p>
+              Pro Tools再生中（MTC受信中）に、内蔵マイク、USBマイク、Webカメラのマイクなどを自動でミュートできます。
+              オーディオインターフェースに接続されたマイクではなく、Macの内蔵マイクやUSBマイクなど、通話用デバイスを対象とした機能です。
+              オンラインミックスチェックなどで使うコミュニケーション用アプリ（Zoom / Google Meet / Lineなど）での使用を想定しています。
+            </p>
+          </div>
+          <figure class="manual-media large">
+            <img src="../../assets/gakkey-lab/rtc-auto-talkback.png" alt="Auto Talkbackの有効化、状態表示、音量、遅延、マイク選択の設定">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>消灯</th>
+                <td>Auto Talkbackオフ。常にマイクオン。</td>
+              </tr>
+              <tr>
+                <th>緑点灯</th>
+                <td>停止中。自動でマイクオン。</td>
+              </tr>
+              <tr>
+                <th>赤点灯</th>
+                <td>再生中。自動でマイクミュート。</td>
+              </tr>
+              <tr>
+                <th>Shift + クリック</th>
+                <td>ミュートホールドモード。常にマイクミュート。解除はクリックで、解除前の状態に戻ります。</td>
+              </tr>
+              <tr>
+                <th>右クリック<br>Control / Option + クリック</th>
+                <td>Mic Volume、Auto Talkback設定、無効化などのメニューを表示。</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            停止からマイクミュートを解除するまでの遅延は、0〜3000msecの範囲で1ms単位に設定できます（デフォルト500msec）。<br>
+            複数のマイクがある場合は、制御するマイクを選択できます。
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1667,6 +1667,89 @@ h1 span {
   grid-column: span 2;
 }
 
+.manual-details {
+  grid-column: span 2;
+  overflow: hidden;
+  border: 1px solid rgba(39, 141, 221, 0.2);
+  border-radius: 8px;
+  background: #f6fafb;
+}
+
+.manual-details summary {
+  padding: 17px 20px;
+  color: #176fa9;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.manual-details[open] summary {
+  border-bottom: 1px solid rgba(22, 25, 24, 0.1);
+}
+
+.manual-details-content {
+  display: grid;
+  gap: 30px;
+  padding: 24px;
+}
+
+.manual-setup-step {
+  display: grid;
+  gap: 16px;
+}
+
+.manual-setup-step + .manual-setup-step {
+  padding-top: 30px;
+  border-top: 1px solid rgba(22, 25, 24, 0.12);
+}
+
+.manual-setup-step > div > span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+  padding: 0 7px;
+  color: white;
+  background: #176fa9;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.manual-setup-step h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.manual-setup-step p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.manual-setup-step p:last-child {
+  margin-bottom: 0;
+}
+
+.manual-setup-step p a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.manual-setup-step .manual-media.framed {
+  padding: 14px;
+  background: #e8edef;
+  border-color: rgba(22, 25, 24, 0.14);
+}
+
+.manual-setup-step .manual-media.framed img {
+  border-radius: 5px;
+}
+
 .manual-shortcut-group h3 {
   margin: 0 0 8px;
   font-size: 20px;
