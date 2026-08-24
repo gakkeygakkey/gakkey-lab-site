@@ -421,7 +421,16 @@
           "Fixed an issue on macOS 26 Tahoe that prevented the button at the bottom of the Loudness Appearance window from being clicked",
           "Added automatic update checking"
         ],
-        sideNote: "Fixed a launch crash on macOS Tahoe",
+        rtcNotes: [
+          "Added integration with Side Note.",
+          "Added automatic update checks and an online manual.",
+          "Improved the reliability of REL=0 setting when using PTSL."
+        ],
+        sideNoteNotes: [
+          "Added integration with Relative Time Counter (RTC), allowing you to locate from time expressions in text.",
+          "Added Quick Look support for Side Note save files and options to export notes as PDF or standalone HTML.",
+          "Added automatic update checks and an online manual."
+        ],
         quickActions: "Download Quick Actions"
       }
     : {
@@ -435,7 +444,16 @@
           "macOS 26 Tahoeで、Loudness Appearance画面最下部のボタンを押せない問題を修正",
           "自動アップデート確認機能を追加"
         ],
-        sideNote: "macOS Tahoeでの起動時クラッシュを修正",
+        rtcNotes: [
+          "Side Noteとの連携に対応しました。",
+          "自動アップデートチェックとオンラインマニュアルを追加しました。",
+          "PTSL連携時のREL=0設定を改善しました。"
+        ],
+        sideNoteNotes: [
+          "Relative Time Counter（RTC）と連携し、テキスト内の時間情報からロケートできるようになりました。",
+          "Side Note保存データのQuick Lookと、PDF・スタンドアロンHTMLへの書き出しに対応しました。",
+          "自動アップデートチェックとオンラインマニュアルを追加しました。"
+        ],
         quickActions: "Quick Actionsのダウンロードはこちら"
       };
 
@@ -454,8 +472,8 @@
   };
 
   const bridgeManual = "bridge-meter/manual/";
+  const rtcManual = "relative-time-counter/manual/";
   const sideNoteManual = "side-note/manual/";
-  const manuals = "manuals/";
   const quickActions = "quick-actions/";
 
   const imageTag = (src, alt, className) =>
@@ -470,7 +488,7 @@
       <div class="gl-download-app-main">
         <h3>${name}</h3>
         <div class="gl-download-meta">
-          <span class="gl-download-version">Ver${version}</span>
+          <span class="gl-download-version">Ver. ${version}</span>
           <span>${meta}</span>
         </div>
         ${notes(noteLines)}
@@ -513,21 +531,21 @@
           id: "download-rtc",
           icon: images.rtc,
           name: "Relative Time Counter",
-          version: "2026.6.14",
+          version: "2026.8.21",
           meta: text.commonMeta,
           href: downloads.rtc,
-          manualHref: manuals,
-          noteLines: []
+          manualHref: rtcManual,
+          noteLines: text.rtcNotes
         })}
         ${row({
           id: "download-side-note",
           icon: images.side,
           name: "Side Note",
-          version: "2026.6.19",
+          version: "2026.8.21",
           meta: text.commonMeta,
           href: downloads.side,
           manualHref: sideNoteManual,
-          noteLines: [text.sideNote]
+          noteLines: text.sideNoteNotes
         })}
       </div>
 
