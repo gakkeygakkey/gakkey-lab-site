@@ -43,6 +43,7 @@
         </a>
         <nav>
           <span>Quick Manual</span>
+          <a href="#overview">Overview</a>
           <a href="#control">Controls</a>
           <a href="#shortcuts">Shortcuts</a>
           <a href="#autohide">AutoHide</a>
@@ -60,10 +61,23 @@
         <section class="manual-hero">
           <p class="eyebrow">Web Manual</p>
           <h1>Side Note<br>Manual</h1>
-          <p>
-            Side Note is a macOS note app for keeping text, PDFs, and images beside your workspace.
-            Switch between three independent notes to keep the information you need close at hand.
-          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="overview">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Overview</p>
+            <h2>Overview</h2>
+            <p>
+              Side Note is a macOS viewer that keeps text, PDFs, and images visible beside your workspace, even while you work in other apps.<br>
+              Switch between three notes to keep the notes and reference materials you need close at hand.<br>
+              Use it with any app—not only a DAW—to collect text and images while browsing the web or keep reference materials and PDFs visible while you work.<br>
+              Each note can be used as either a text note or a PDF note.
+            </p>
+          </div>
+          <div class="manual-point-list two-columns">
+            <article><strong>Text Note</strong><span>Enter notes and other text, or paste images.</span></article>
+            <article><strong>PDF Note</strong><span>Import a PDF directly and use the note as a viewer.</span></article>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="control">
@@ -76,12 +90,21 @@
             </p>
           </div>
           <figure class="manual-media medium">
-            <img src="../../../assets/gakkey-lab/side-note-controlbar-en.png" alt="Side Note control bar">
+            <img src="../../../assets/gakkey-lab/side-note-controlbar-en.png" alt="Side Note controls">
           </figure>
           <div class="manual-point-list">
             <article><strong>File menu</strong><span>Save, load, export, and perform other file operations.</span></article>
             <article><strong>AutoHide</strong><span>Automatically hide notes when they get in the way.</span></article>
             <article><strong>Notes 1 / 2 / 3</strong><span>Show or hide each note independently.</span></article>
+          </div>
+          <div class="manual-clear-callout">
+            <div class="manual-detail-block">
+              <h3>Delete a Note</h3>
+              <p>Use the small × button in the upper-right corner to delete the note’s contents and return it to its default state.</p>
+            </div>
+            <figure class="manual-media">
+              <img src="../../../assets/gakkey-lab/side-note-note-clear.png" alt="Delete a note’s contents with the × button and return it to its default state">
+            </figure>
           </div>
         </section>
 
@@ -121,6 +144,11 @@
               It does not activate while you are working in Side Note itself. Use it to temporarily hide notes while you work.
             </p>
           </div>
+          <figure class="manual-media medium framed manual-video">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="A note fading out with AutoHide">
+              <source src="../../../assets/gakkey-lab/side-note-autohide.mp4" type="video/mp4">
+            </video>
+          </figure>
           <table class="manual-operation-table wide"><tbody>
             <tr><th>AutoHide ON</th><td>Automatically hide a note when the pointer stops over it while you are using another app</td></tr>
             <tr><th>⌘ + Tab to Side Note</th><td>Restore every note hidden by AutoHide</td></tr>
@@ -129,8 +157,8 @@
             <h3>Temporarily Cancel AutoHide</h3>
             <p>You can temporarily cancel AutoHide without turning it off when you want to work with a note, such as when scrolling text or a PDF.</p>
             <table class="manual-operation-table"><tbody>
-              <tr><th>Scroll</th><td>Cancel AutoHide and scroll the text or PDF as usual</td></tr>
-              <tr><th>Keep moving the pointer</th><td>Cancel AutoHide by continuing to move after entering the note instead of stopping immediately</td></tr>
+              <tr><th>Scroll</th><td>Scroll text or a PDF with the scroll wheel to cancel AutoHide</td></tr>
+              <tr><th>Keep moving the pointer</th><td>Keep the pointer moving after entering the note instead of stopping immediately to cancel AutoHide</td></tr>
               <tr><th>⌘ key</th><td>Press the ⌘ key to cancel AutoHide</td></tr>
             </tbody></table>
             <p class="manual-note">
@@ -154,7 +182,6 @@
           <table class="manual-operation-table wide"><tbody>
             <tr><th>Save</th><td>Save note contents together with their display state and positions</td></tr>
             <tr><th>Load</th><td>Restore saved contents, display state, positions, PDF pages, and more</td></tr>
-            <tr><th>Clear</th><td>Clear a note with the small × button in its upper-right corner</td></tr>
           </tbody></table>
           <div class="manual-subsection">
             <h3>Quick Look</h3>
@@ -163,6 +190,9 @@
               You can quickly review saved notes without launching Side Note.<br>
               Side Note Quick Look also supports ZIP archives.
             </p>
+            <figure class="manual-media large manual-quick-look-media">
+              <img src="../../../assets/gakkey-lab/side-note-quick-look.png" alt="Quick Look previews of Side Note saved data and a ZIP archive">
+            </figure>
           </div>
         </section>
 
@@ -199,30 +229,41 @@
             <h3>Export a Standalone HTML Viewer</h3>
             <ul class="manual-bullet-list">
               <li>Export the contents of Notes 1–3 as one HTML file.</li>
-              <li>Open the exported HTML in a browser for viewing, even without Side Note installed.</li>
-              <li>Use the browser print feature to print the selected note or save it as a PDF.</li>
+              <li>Open the exported HTML in a browser on a Mac or Windows PC without Side Note installed.</li>
+              <li>Use the browser’s print feature to print the selected note or save it as a PDF.</li>
+              <li>Use it to share note contents with people who do not use Side Note.</li>
             </ul>
           </div>
+          <p class="manual-note">Use standalone HTML to quickly share all three notes together, or PDF to share the selected note while preserving its appearance.</p>
         </section>
 
         <section class="manual-section manual-section-stack" id="rtc">
           <div class="manual-section-copy">
             <p class="eyebrow">RTC Integration</p>
             <h2>Relative Time Counter (RTC) Integration</h2>
-            <p>With a compatible version of Relative Time Counter (RTC), you can use time expressions in text notes to locate the counter directly.</p>
+            <p>With Relative Time Counter (RTC), you can use time expressions in text notes to locate the counter directly.<br>RTC version 2026.8.21 or later is required.</p>
           </div>
           <div class="manual-subsection">
             <h3>Locate RTC from Text</h3>
             <p>Hold ⌘ (Command) and place the pointer over a time expression in text; it turns into a green link.<br>Click the link to send that time to RTC and locate it.</p>
-            <p class="manual-subsection-label">Examples of supported time expressions</p>
-            <ul class="manual-bullet-list">
-              <li>1:23 / 01:23</li><li>1:23:45 / 01:23:45:12</li><li>15秒 / 1分 / 1分23秒</li><li>15s / 42sec</li><li>1m23s / 1min 23sec</li>
-            </ul>
+            <div class="manual-rtc-recognition">
+              <div>
+                <p class="manual-subsection-label">Examples of supported time expressions</p>
+                <ul class="manual-bullet-list">
+                  <li>1:23 / 01:23</li><li>1:23:45 / 01:23:45:12</li><li>15秒 / 1分 / 1分23秒</li><li>15s / 42sec</li><li>1m23s / 1min 23sec</li>
+                </ul>
+              </div>
+              <figure class="manual-media manual-video">
+                <video autoplay muted loop playsinline preload="metadata" aria-label="Time expressions being recognized as green links">
+                  <source src="../../../assets/gakkey-lab/side-note-rtc-recognition.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
             <p>Full-width digits and colons are also supported, as are semicolons and periods as separators.<br>RTC’s current settings determine the actual interpretation, including REL / ABS and frame handling.</p>
           </div>
           <div class="manual-subsection">
             <h3>Insert the RTC Time into a Note</h3>
-            <p>Click the clock icon in a note’s title bar to insert RTC’s current counter time as text.<br>For example, if RTC displays 2:25, Side Note inserts 2:25 at the text cursor.<br>This is useful for recording noteworthy moments while reviewing a mix or edit.</p>
+            <p>Click the clock icon in a note’s title bar to insert RTC’s current counter time as text.<br>For example, if RTC displays 2:25, Side Note inserts 2:25 at the text cursor.<br>This is useful for recording noteworthy moments while reviewing a mix or edit, or for adding time references to a lyric sheet.</p>
           </div>
           <div class="manual-subsection">
             <h3>Add Writing Space</h3>
@@ -239,12 +280,19 @@
           <div class="manual-section-copy">
             <p class="eyebrow">Notes</p>
             <h2>Notes</h2>
-            <p>Side Note is designed primarily as a compact viewer. PDF and text editing are intentionally minimal. Text editing and PDF viewing use Apple’s standard technologies, so some standard features may be available from the context menu.</p>
           </div>
-          <table class="manual-operation-table wide"><tbody>
-            <tr><th>Paste images</th><td>Drag pasted images to resize them. Double-click to show an enlarged preview.</td></tr>
-            <tr><th>Launch while holding Shift</th><td>Start with Note 1 in text mode, ready to write.</td></tr>
-          </tbody></table>
+          <div class="manual-subsection">
+            <h3>About Editing Features</h3>
+            <p>Side Note is designed primarily as a viewer. PDF and text editing are intentionally minimal. Text editing and PDF viewing use Apple’s standard technologies, so some standard features may be available from the context menu.</p>
+          </div>
+          <div class="manual-subsection">
+            <h3>About Pasted Images</h3>
+            <p>Drag pasted images to resize them. Double-click an image to show an enlarged preview.</p>
+          </div>
+          <div class="manual-subsection">
+            <h3>Launch While Holding Shift</h3>
+            <p>Start with Note 1 in text mode, ready to write.</p>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="updates">

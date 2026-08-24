@@ -46,6 +46,7 @@
         </a>
         <nav>
           <span>Quick Manual</span>
+          <a href="#overview">概要</a>
           <a href="#control">コントロール</a>
           <a href="#shortcuts">ショートカット</a>
           <a href="#autohide">AutoHide</a>
@@ -63,23 +64,42 @@
         <section class="manual-hero">
           <p class="eyebrow">Web Manual</p>
           <h1>Side Note<br>マニュアル</h1>
-          <p>
-            Side Noteは、テキスト、PDF、画像を作業画面のそばに置いておくためのmacOS用ノートアプリです。
-            3枚のノートを切り替えながら、必要な情報を作業中にすぐ確認できます。
-          </p>
+        </section>
+
+        <section class="manual-section manual-section-stack" id="overview">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Overview</p>
+            <h2>概要</h2>
+            <p>
+              Side Noteは、ほかのアプリを操作しているときも背後に隠れず、テキスト、PDF、画像を作業画面のそばに表示しておけるmacOS用ビューアです。<br>
+              3枚のノートを切り替えながら、作業に必要なメモや資料をいつでも確認できます。<br>
+              Webページのテキストや画像を貼り付けてスクラップしたり、資料やPDFを参照したりと、DAWに限らずさまざまなアプリと一緒に使えます。<br>
+              各ノートは、テキストノートまたはPDFノートとして使用できます。
+            </p>
+          </div>
+          <div class="manual-point-list two-columns">
+            <article>
+              <strong>テキストノート</strong>
+              <span>メモや文章を入力したり、画像を貼り付けたりできます。</span>
+            </article>
+            <article>
+              <strong>PDFノート</strong>
+              <span>PDFをそのまま取り込み、ビューアとして閲覧できます。</span>
+            </article>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="control">
           <div class="manual-section-copy">
             <p class="eyebrow">Control</p>
-            <h2>Side Noteコントロール</h2>
+            <h2>Side Noteの操作パネル</h2>
             <p>
-              Side Noteの小さなコントロールから、ノートの表示、AutoHide、ファイル操作を行います。
+              Side Noteの小さな操作パネルから、ノートの表示、AutoHide、ファイル操作を行います。
               ノートボタンの色で、現在の表示状態を確認できます。
             </p>
           </div>
           <figure class="manual-media medium">
-            <img src="../../assets/gakkey-lab/side-note-controlbar-jp.png" alt="Side Noteのコントロールバー">
+            <img src="../../assets/gakkey-lab/side-note-controlbar-jp.png" alt="Side Noteの操作パネル">
           </figure>
           <div class="manual-point-list">
             <article>
@@ -94,6 +114,15 @@
               <strong>ノート 1 / 2 / 3</strong>
               <span>各ノートの表示・非表示を切り替えます。</span>
             </article>
+          </div>
+          <div class="manual-clear-callout">
+            <div class="manual-detail-block">
+              <h3>ノートを削除する</h3>
+              <p>各ノート右上の小さな「×」ボタンで、ノートの内容を削除して初期状態に戻します。</p>
+            </div>
+            <figure class="manual-media">
+              <img src="../../assets/gakkey-lab/side-note-note-clear.png" alt="各ノート右上の×ボタンでノートを削除して初期状態に戻す">
+            </figure>
           </div>
         </section>
 
@@ -167,6 +196,11 @@
               作業中に一時的にノートを隠したい時に使います。
             </p>
           </div>
+          <figure class="manual-media medium framed manual-video">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="AutoHideでノートがフェードアウトする様子">
+              <source src="../../assets/gakkey-lab/side-note-autohide.mp4" type="video/mp4">
+            </video>
+          </figure>
           <table class="manual-operation-table wide">
             <tbody>
               <tr>
@@ -188,15 +222,15 @@
               <tbody>
                 <tr>
                   <th>スクロール</th>
-                  <td>AutoHideをキャンセルし、テキストやPDFをそのままスクロールする</td>
+                  <td>テキストやPDFをスクロールホイールでスクロールするとAutoHideをキャンセル</td>
                 </tr>
                 <tr>
                   <th>マウスカーソルを動かし続ける</th>
-                  <td>ノート上へ移動したあと、すぐに停止させず動かし続けるとAutoHideをキャンセルする</td>
+                  <td>ノート上へ移動したあと、すぐに停止させず動かし続けるとAutoHideをキャンセル</td>
                 </tr>
                 <tr>
                   <th>⌘キー</th>
-                  <td>⌘キーを押すとAutoHideをキャンセルする</td>
+                  <td>⌘キーを押すとAutoHideをキャンセル</td>
                 </tr>
               </tbody>
             </table>
@@ -232,10 +266,6 @@
                 <th>Load</th>
                 <td>保存した時のノート内容、表示状態、位置、PDFの表示ページなどを復元</td>
               </tr>
-              <tr>
-                <th>Clear</th>
-                <td>各ノート右上の小さな「×」ボタンで内容をクリア</td>
-              </tr>
             </tbody>
           </table>
           <div class="manual-subsection">
@@ -245,6 +275,9 @@
               Side Noteを起動しなくても、保存されているノートの内容をすばやく確認できます。<br>
               また、Side NoteのQuick Look機能はZIPファイルの内容表示にも対応しています。
             </p>
+            <figure class="manual-media large manual-quick-look-media">
+              <img src="../../assets/gakkey-lab/side-note-quick-look.png" alt="Side Noteの保存データとZIPファイルをQuick Lookで表示した画面">
+            </figure>
           </div>
         </section>
 
@@ -294,10 +327,14 @@
             <h3>スタンドアロンHTMLビューアを書き出す</h3>
             <ul class="manual-bullet-list">
               <li>ノート1〜3の内容をひとつのHTMLファイルとして書き出せます。</li>
-              <li>書き出したHTMLは、Side Noteがなくてもブラウザで閲覧用として開くことができます。</li>
-              <li>ブラウザの印刷機能を使って、選択したノートを印刷したりPDFとして保存することもできます。</li>
+              <li>書き出したHTMLは、Side NoteがインストールされていないMacやWindowsでも、ブラウザで閲覧できます。</li>
+              <li>ブラウザの印刷機能を使って、選択したノートを印刷したりPDFとして保存したりできます。</li>
+              <li>Side Noteを使用していない人とノートの内容を共有するときに便利です。</li>
             </ul>
           </div>
+          <p class="manual-note">
+            ノート1〜3をまとめて手軽に共有する場合はスタンドアロンHTML、選択中のノートを見た目を保ったまま共有する場合はPDF書き出しが便利です。
+          </p>
         </section>
 
         <section class="manual-section manual-section-stack" id="rtc">
@@ -305,7 +342,8 @@
             <p class="eyebrow">RTC Integration</p>
             <h2>Relative Time Counter（RTC）連携</h2>
             <p>
-              対応バージョンのRelative Time Counter（RTC）と組み合わせることで、テキストノートからRTCを直接ロケートできます。
+              Relative Time Counter（RTC）と組み合わせることで、テキストノートからRTCを直接ロケートできます。<br>
+              ※Relative Time Counter Ver. 2026.8.21以降が必要です。
             </p>
           </div>
           <div class="manual-subsection">
@@ -314,14 +352,23 @@
               テキスト内の時間表記に⌘（Command）キーを押しながらカーソルを重ねると、緑色のリンクに変わります。<br>
               リンクをクリックすると、その時間をRTCへ送信してロケートします。
             </p>
-            <p class="manual-subsection-label">対応する主な時間表記</p>
-            <ul class="manual-bullet-list">
-              <li>1:23 / 01:23</li>
-              <li>1:23:45 / 01:23:45:12</li>
-              <li>15秒 / 1分 / 1分23秒</li>
-              <li>15s / 42sec</li>
-              <li>1m23s / 1min 23sec</li>
-            </ul>
+            <div class="manual-rtc-recognition">
+              <div>
+                <p class="manual-subsection-label">対応する主な時間表記</p>
+                <ul class="manual-bullet-list">
+                  <li>1:23 / 01:23</li>
+                  <li>1:23:45 / 01:23:45:12</li>
+                  <li>15秒 / 1分 / 1分23秒</li>
+                  <li>15s / 42sec</li>
+                  <li>1m23s / 1min 23sec</li>
+                </ul>
+              </div>
+              <figure class="manual-media manual-video">
+                <video autoplay muted loop playsinline preload="metadata" aria-label="時間表記が緑色のリンクとして認識される様子">
+                  <source src="../../assets/gakkey-lab/side-note-rtc-recognition.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
             <p>
               全角数字・全角コロンのほか、セミコロンやピリオドによる区切りにも対応しています。<br>
               実際のロケート解釈（REL／ABS、フレームの扱い）は、RTC側の現在の設定に従います。
@@ -332,7 +379,7 @@
             <p>
               ノートのタイトルバーにある時計アイコンをクリックすると、RTCのカウンターに現在表示されている時刻をテキストとしてノートに挿入できます。<br>
               たとえばRTCに2:25と表示されている場合、ノートのカーソル位置に2:25が挿入されます。<br>
-              ミックスや編集を確認しながら、気になった箇所の時刻をノートへ記録するときに便利です。
+              ミックスや編集を確認しながら、気になった箇所の時刻をノートへ記録したり、歌詞カードに時刻を追加したりするときに便利です。
             </p>
           </div>
           <div class="manual-subsection">
@@ -358,24 +405,23 @@
           <div class="manual-section-copy">
             <p class="eyebrow">Notes</p>
             <h2>補足</h2>
+          </div>
+          <div class="manual-subsection">
+            <h3>編集機能について</h3>
             <p>
-              Side Noteは、基本的には小さなビューアとして使うことを想定しています。
+              Side Noteは、基本的にはビューアとして使うことを想定しています。
               PDFやテキストの編集機能は最小限です。
               テキスト編集やPDF表示はApple標準の仕組みを利用しているため、右クリックから一部の標準機能を使える場合があります。
             </p>
           </div>
-          <table class="manual-operation-table wide">
-            <tbody>
-              <tr>
-                <th>画像貼り付け</th>
-                <td>貼り付けた画像はドラッグで拡大縮小できます。ダブルクリックで拡大プレビューできます。</td>
-              </tr>
-              <tr>
-                <th>Shiftを押しながら起動</th>
-                <td>ノート1がテキストモードで、すぐに書ける状態で起動します。</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="manual-subsection">
+            <h3>貼り付けた画像について</h3>
+            <p>貼り付けた画像はドラッグで拡大縮小できます。ダブルクリックすると拡大プレビューを表示します。</p>
+          </div>
+          <div class="manual-subsection">
+            <h3>Shiftキーを押しながら起動</h3>
+            <p>ノート1をテキストモードで開き、すぐに書き始められる状態で起動します。</p>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="updates">
