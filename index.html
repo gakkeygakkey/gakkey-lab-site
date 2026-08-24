@@ -380,11 +380,17 @@
   const attr = (element, name) => element?.getAttribute(name) || "";
 
   const findDownloadHref = (textNeedles, hrefNeedles) => {
-    const candidates = sectionLinks.filter((link) => {
+    const directDownload = sectionLinks.find((link) => {
       const href = normalize(attr(link, "href"));
+      return href.includes("releases/download") &&
+        hrefNeedles.some((needle) => href.includes(needle));
+    });
+
+    if (directDownload) return attr(directDownload, "href");
+
+    const candidates = sectionLinks.filter((link) => {
       const rowText = normalize((link.closest("article, li, .download-item, .download-row, .download-card, div") || link).textContent);
-      return hrefNeedles.some((needle) => href.includes(needle)) ||
-        textNeedles.every((needle) => rowText.includes(needle));
+      return textNeedles.every((needle) => rowText.includes(needle));
     });
 
     const downloadLink = candidates.find((link) => {
