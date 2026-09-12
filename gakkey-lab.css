@@ -1644,6 +1644,10 @@ h1 span {
   width: min(640px, 100%);
 }
 
+.manual-plugin-lamp {
+  margin: 18px 0;
+}
+
 .manual-media.large {
   grid-column: span 2;
   justify-self: center;

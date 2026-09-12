@@ -225,6 +225,24 @@
             Bridge Meterがすでに起動している場合も、ボタンを押すことで入力がBridge Pluginに切り替わります。<br>
             Pluginがなくなった時、元の入力がSystem Audio Out / Inputなら、その入力へ戻ります。
           </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Bridge Pluginランプ</h3>
+              <p>VUメーター右下のランプで、Bridge Pluginの使用状態を確認できます。ランプ点灯中は、Bridge Pluginからの音声を表示しています。</p>
+              <ul class="manual-bullet-list">
+                <li>点灯：Bridge Pluginから音声を受信中</li>
+                <li>消灯：Bridge Pluginからの受信待機中、または一時的にSystem Audio Input／Outputを使用中</li>
+              </ul>
+              <figure class="manual-media medium manual-plugin-lamp">
+                <img src="../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Pluginランプの消灯時と点灯時の表示">
+              </figure>
+              <p>
+                入力設定がBridge Pluginの場合、ランプは常に表示されます。<br>
+                通常の入力設定がSystem Audio Input／Outputの場合は、Bridge Pluginへ接続したときだけランプが表示されます。Shift＋マウスホイールで、Bridge Pluginと通常の入力を一時的に切り替えられます。
+              </p>
+              <p>Bridge Pluginが起動していれば、プラグイン側でConnectを押していなくても、Shift＋ホイール上方向でBridge Pluginへ切り替えられます。Bridge Pluginが見つからない場合は切り替わりません。</p>
+            </section>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="layout-sets">
