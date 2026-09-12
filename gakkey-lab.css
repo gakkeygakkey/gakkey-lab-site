@@ -1622,7 +1622,8 @@ h1 span {
   justify-self: end;
 }
 
-.manual-media.compact img {
+.manual-media.compact img,
+.manual-media.compact video {
   width: 246px;
 }
 

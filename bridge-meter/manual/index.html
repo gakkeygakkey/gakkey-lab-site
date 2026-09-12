@@ -110,27 +110,33 @@
         <section class="manual-section manual-section-stack" id="meter-display">
           <div class="manual-section-copy">
             <p class="eyebrow">Meter Display</p>
-            <h2>メーター部分をダブルクリックで表示を切り替える</h2>
+            <h2>メーター部分の操作で表示を切り替える</h2>
           </div>
           <div class="manual-operation-row">
             <table class="manual-operation-table">
               <tbody>
                 <tr>
+                  <th>スクロールホイール</th>
+                  <td>VU / Loudness / Analyzerを切り替え</td>
+                </tr>
+                <tr>
                   <th>ダブルクリック</th>
-                  <td>VU / Loudnessを切り替え</td>
+                  <td>Loudnessに切り替え</td>
                 </tr>
                 <tr>
                   <th>⌘ + ダブルクリック</th>
                   <td>Analyzerに切り替え</td>
                 </tr>
                 <tr>
-                  <th>Analyzerから戻る</th>
-                  <td>ダブルクリックでVUへ</td>
+                  <th>Loudness・Analyzer表示中に<br>ダブルクリック</th>
+                  <td>VUに戻る</td>
                 </tr>
               </tbody>
             </table>
             <figure class="manual-media compact">
-              <img src="../../assets/gakkey-lab/meter-switching.gif" alt="Bridge Meterの表示切り替え">
+              <video autoplay loop muted playsinline aria-label="Bridge Meterのスクロールホイールによる表示切り替え">
+                <source src="../../assets/gakkey-lab/meter-scroll-change.mp4" type="video/mp4">
+              </video>
             </figure>
           </div>
         </section>
@@ -374,14 +380,23 @@
               </section>
               <section class="manual-detail-block manual-detail-inline">
                 <figure class="manual-media">
-                  <img src="../../assets/gakkey-lab/peak-hold-reset.png" alt="Bridge MeterのPeak Holdリセット表示">
+                  <img src="../../assets/gakkey-lab/peak-hold-reset-action.png" alt="Bridge MeterのPeak Holdリセット操作">
                 </figure>
                 <div>
                   <h3>Peak Holdのリセット</h3>
                   <p>
                     ホールドランプ付近、または+/-表示付近をクリックすると、ピークホールドをリセットできます。<br>
-                    表示上は同じ0.0でも、内部的に0 dBを超えていない場合は緑ランプ、0 dBをわずかに超えた場合は+0.0と赤ランプで表示されます。
+                    ホールドランプ付近では、マウスホバーで約1秒とどまると、クリックせずにリセットできます。
                   </p>
+                </div>
+              </section>
+              <section class="manual-detail-block manual-detail-inline">
+                <figure class="manual-media">
+                  <img src="../../assets/gakkey-lab/peak-hold-zero-display.png" alt="Bridge Meterの0.0と+0.0のPeak Hold表示">
+                </figure>
+                <div>
+                  <h3>0.0 / +0.0の表示</h3>
+                  <p>表示上は同じ0.0でも、内部的に0 dBを超えていない場合は緑ランプ、0 dBをわずかに超えた場合は+0.0と赤ランプで表示されます。</p>
                 </div>
               </section>
             </div>
