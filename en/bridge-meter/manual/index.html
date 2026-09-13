@@ -110,27 +110,33 @@
         <section class="manual-section manual-section-stack" id="meter-display">
           <div class="manual-section-copy">
             <p class="eyebrow">Meter Display</p>
-            <h2>Double-click the meter area to switch the display</h2>
+            <h2>Switch the display from the meter area</h2>
           </div>
           <div class="manual-operation-row">
             <table class="manual-operation-table">
               <tbody>
                 <tr>
+                  <th>Scroll wheel</th>
+                  <td>Switch between VU, Loudness, and Analyzer</td>
+                </tr>
+                <tr>
                   <th>Double-click</th>
-                  <td>Switch between VU and Loudness</td>
+                  <td>Switch to Loudness</td>
                 </tr>
                 <tr>
                   <th>⌘ + Double-click</th>
                   <td>Switch to Analyzer</td>
                 </tr>
                 <tr>
-                  <th>Return from Analyzer</th>
-                  <td>Double-click to return to VU</td>
+                  <th>When Loudness or Analyzer is displayed,<br>double-click</th>
+                  <td>Return to VU</td>
                 </tr>
               </tbody>
             </table>
             <figure class="manual-media compact">
-              <img src="../../../assets/gakkey-lab/meter-switching.gif" alt="Switching Bridge Meter displays">
+              <video autoplay loop muted playsinline aria-label="Switching Bridge Meter displays with the scroll wheel">
+                <source src="../../../assets/gakkey-lab/meter-scroll-change.mp4" type="video/mp4">
+              </video>
             </figure>
           </div>
         </section>
@@ -219,6 +225,24 @@
             If Bridge Meter is already running, clicking the button will still switch the input to Bridge Plugin.<br>
             When the plugin disappears, if the previous input was System Audio Out / Input, Bridge Meter returns to that input.
           </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Bridge Plugin indicator light</h3>
+              <p>The indicator light at the bottom-right of the VU meter shows the Bridge Plugin status. When it is lit, Bridge Meter is displaying audio received from Bridge Plugin.</p>
+              <ul class="manual-bullet-list">
+                <li>Lit: Receiving audio from Bridge Plugin</li>
+                <li>Unlit: Waiting for Bridge Plugin audio, or temporarily using System Audio Input / Output</li>
+              </ul>
+              <figure class="manual-media medium manual-plugin-lamp">
+                <img src="../../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Plugin indicator light when unlit and lit">
+              </figure>
+              <p>
+                When Bridge Plugin is selected as the input, the indicator is always visible.<br>
+                When System Audio Input / Output is normally selected, the indicator appears only while connected to Bridge Plugin. Use Shift + the scroll wheel to temporarily switch between Bridge Plugin and the normal input.
+              </p>
+              <p>If Bridge Plugin is running, Shift + scroll up switches to Bridge Plugin even if Connect has not been pressed in the plugin. Nothing changes if Bridge Plugin cannot be found.</p>
+            </section>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="layout-sets">
@@ -373,14 +397,23 @@
               </section>
               <section class="manual-detail-block manual-detail-inline">
                 <figure class="manual-media">
-                  <img src="../../../assets/gakkey-lab/peak-hold-reset.png" alt="Bridge Meter Peak Hold reset display">
+                  <img src="../../../assets/gakkey-lab/peak-hold-reset-action.png" alt="Bridge Meter Peak Hold reset controls">
                 </figure>
                 <div>
                   <h3>Reset Peak Hold</h3>
                   <p>
                     Click near the hold lamp or near the +/- display to reset peak hold.<br>
-                    Even when the display reads 0.0, a value that is internally not over 0 dB is shown with a green lamp, while a value slightly over 0 dB is shown as +0.0 with a red lamp.
+                    Hover near the hold lamp for about one second to reset it without clicking.
                   </p>
+                </div>
+              </section>
+              <section class="manual-detail-block manual-detail-inline">
+                <figure class="manual-media">
+                  <img src="../../../assets/gakkey-lab/peak-hold-zero-display.png" alt="Bridge Meter 0.0 and +0.0 Peak Hold displays">
+                </figure>
+                <div>
+                  <h3>0.0 / +0.0 display</h3>
+                  <p>Although both values may appear as 0.0, a value that has not exceeded 0 dB internally is shown with a green lamp, while a value that has just exceeded 0 dB is shown as +0.0 with a red lamp.</p>
                 </div>
               </section>
             </div>
