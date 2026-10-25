@@ -2598,3 +2598,69 @@ h1 span {
   .gl-download-row { grid-template-columns: 1fr; gap: 16px; padding: 22px 18px; }
   .gl-download-actions { grid-column: auto; align-items: flex-start; }
 }
+
+/* Small projects from the lab, separate from the main app introductions. */
+.lab-tools {
+  width: min(1120px, calc(100% - 44px));
+  margin: 0 auto 56px;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.lab-tools h2 {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.lab-tool {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lab-tool > img {
+  flex: 0 0 64px;
+  object-fit: contain;
+}
+
+.lab-tool-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.lab-tool h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.lab-tool p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.lab-tool-link {
+  flex-shrink: 0;
+  color: #147ec2;
+  font-size: 14px;
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.lab-tool-link:hover,
+.lab-tool-link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .lab-tools { padding: 24px 20px; }
+  .lab-tool { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; }
+  .lab-tool > img { width: 52px; height: 52px; flex-basis: 52px; }
+  .lab-tool h3 { font-size: 16px; }
+  .lab-tool-link { grid-column: 2; }
+}
