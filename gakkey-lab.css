@@ -1827,6 +1827,94 @@ h1 span {
   border-radius: 8px;
 }
 
+#tempo-tool .manual-media {
+  grid-column: auto;
+  width: min(420px, 100%);
+}
+
+#tempo-tool .manual-operation-row .manual-media {
+  max-width: 280px;
+}
+
+#tempo-tool .manual-operation-row th span {
+  white-space: nowrap;
+}
+
+@media (min-width: 481px) {
+  #tempo-tool .manual-operation-row th {
+    width: 50%;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 981px) {
+  #tempo-tool .manual-operation-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+  }
+
+  #tempo-tool .tempo-panel {
+    grid-template-columns: minmax(0, 307px) minmax(0, 1fr);
+  }
+}
+
+#tempo-tool figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#tempo-tool .tempo-panel {
+  margin-top: 16px;
+}
+
+#tempo-tool .tempo-panel .manual-media {
+  max-width: 307px;
+}
+
+#tempo-tool .manual-detail-block h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+#tempo-tool .tempo-status {
+  margin-top: 12px;
+}
+
+#tempo-tool .tempo-status img {
+  width: auto;
+  max-width: 100%;
+  height: 36px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.tempo-states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin-bottom: 16px;
+}
+
+.tempo-states .tempo-status {
+  flex: 0 1 120px;
+}
+
+@media (min-width: 721px) {
+  .tempo-states {
+    display: grid;
+    grid-template-columns: max-content repeat(3, minmax(0, 120px));
+  }
+
+  #tempo-tool .tempo-states .tempo-status {
+    width: 100%;
+  }
+
+  #tempo-tool .tempo-states .tempo-status:first-child {
+    width: auto;
+    margin-right: 8px;
+  }
+}
+
 .manual-media-grid {
   grid-column: span 2;
   display: grid;

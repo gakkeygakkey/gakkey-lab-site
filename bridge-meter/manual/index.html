@@ -50,10 +50,11 @@
         <nav>
           <span>Quick Manual</span>
           <a href="#inputs">入力を選ぶ</a>
+          <a href="#bridge-plugin">Bridge Plugin</a>
           <a href="#meter-display">メーター表示切り替え</a>
           <a href="#reference-level">リファレンスレベルの設定</a>
           <a href="#panels">パネル分離</a>
-          <a href="#bridge-plugin">Bridge Plugin</a>
+          <a href="#tempo-tool">テンポツール</a>
           <span>Detailed Manual</span>
           <a href="#layout-sets">レイアウトセット</a>
           <a href="#vu-settings">VU設定</a>
@@ -105,6 +106,51 @@
             ※System Audio Outの使用には、macOSの「システムオーディオ録音」権限が必要です。<br>
             Bridge Meterは音声をメーター表示のためだけに使用し、録音・保存・外部送信は一切行いません。
           </p>
+        </section>
+
+        <section class="manual-section" id="bridge-plugin">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Bridge Plugin</p>
+            <h2>Bridge Pluginから受信する</h2>
+            <p>
+              AAX / VST3 / AU対応のBridge PluginをDAWに挿すと、
+              Bridge MeterでDAWからの表示用信号を直接受信できます。
+              プラグインはメーター表示用の信号だけを送信し、音声そのものは変更しません。
+            </p>
+          </div>
+          <figure class="manual-media framed">
+            <img src="../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge PluginのConnect Meterボタン">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Connect Meterボタンを押す</th>
+                <td>Bridge Meterを起動し、入力をBridge Pluginに切り替え</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            Bridge Meterがすでに起動している場合も、ボタンを押すことで入力がBridge Pluginに切り替わります。<br>
+            Pluginがなくなった時、元の入力がSystem Audio Out / Inputなら、その入力へ戻ります。
+          </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Bridge Pluginランプ</h3>
+              <p>VUメーター右下のランプで、Bridge Pluginの使用状態を確認できます。ランプ点灯中は、Bridge Pluginからの音声を表示しています。</p>
+              <ul class="manual-bullet-list">
+                <li>点灯：Bridge Pluginから音声を受信中</li>
+                <li>消灯：Bridge Pluginからの受信待機中、または一時的にSystem Audio Input／Outputを使用中</li>
+              </ul>
+              <figure class="manual-media medium manual-plugin-lamp">
+                <img src="../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Pluginランプの消灯時と点灯時の表示">
+              </figure>
+              <p>
+                入力設定がBridge Pluginの場合、ランプは常に表示されます。<br>
+                通常の入力設定がSystem Audio Input／Outputの場合は、Bridge Pluginへ接続したときだけランプが表示されます。Shift＋マウスホイールで、Bridge Pluginと通常の入力を一時的に切り替えられます。
+              </p>
+              <p>Bridge Pluginが起動していれば、プラグイン側でConnectを押していなくても、Shift＋ホイール上方向でBridge Pluginへ切り替えられます。Bridge Pluginが見つからない場合は切り替わりません。</p>
+            </section>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="meter-display">
@@ -200,48 +246,132 @@
           </p>
         </section>
 
-        <section class="manual-section" id="bridge-plugin">
+        <section class="manual-section manual-section-stack" id="tempo-tool">
           <div class="manual-section-copy">
-            <p class="eyebrow">Bridge Plugin</p>
-            <h2>Bridge Pluginから受信する</h2>
-            <p>
-              AAX / VST3 / AU対応のBridge PluginをDAWに挿すと、
-              Bridge MeterでDAWからの表示用信号を直接受信できます。
-              プラグインはメーター表示用の信号だけを送信し、音声そのものは変更しません。
-            </p>
+            <h2>テンポツール</h2>
+            <p>Bridge Meterには、BPMの自動計測、タップテンポ、ディレイタイム計算などを行えるメニューバーツールがあります。Bridge Meterの「表示」メニューから「テンポツールをメニューバーに表示」をオンにすると、メニューバーにテンポツールが表示されます。</p>
           </div>
-          <figure class="manual-media framed">
-            <img src="../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge PluginのConnect Meterボタン">
-          </figure>
-          <table class="manual-operation-table wide">
-            <tbody>
-              <tr>
-                <th>Connect Meterボタンを押す</th>
-                <td>Bridge Meterを起動し、入力をBridge Pluginに切り替え</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="manual-note">
-            Bridge Meterがすでに起動している場合も、ボタンを押すことで入力がBridge Pluginに切り替わります。<br>
-            Pluginがなくなった時、元の入力がSystem Audio Out / Inputなら、その入力へ戻ります。
-          </p>
-          <div class="manual-detail-copy manual-detail-full">
-            <section class="manual-detail-block">
-              <h3>Bridge Pluginランプ</h3>
-              <p>VUメーター右下のランプで、Bridge Pluginの使用状態を確認できます。ランプ点灯中は、Bridge Pluginからの音声を表示しています。</p>
-              <ul class="manual-bullet-list">
-                <li>点灯：Bridge Pluginから音声を受信中</li>
-                <li>消灯：Bridge Pluginからの受信待機中、または一時的にSystem Audio Input／Outputを使用中</li>
-              </ul>
-              <figure class="manual-media medium manual-plugin-lamp">
-                <img src="../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Pluginランプの消灯時と点灯時の表示">
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th scope="row">クリック</th>
+                  <td>BPMの自動計測を開始</td>
+                </tr>
+                <tr>
+                  <th scope="row">計測中にクリック</th>
+                  <td>計測をキャンセル</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span>Shift＋クリック</span>を繰り返す</th>
+                  <td>タップテンポ</td>
+                </tr>
+                <tr>
+                  <th scope="row">右クリック（<span>コントロール＋クリック</span>）<br>または<span>オプションクリック</span></th>
+                  <td>詳細パネルを表示</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media">
+              <img src="../../assets/gakkey-lab/bridge-meter-tempo-menu.png" width="1114" height="598" alt="「テンポツールをメニューバーに表示」のメニュー項目">
+              <figcaption>「表示」メニューの「テンポツールをメニューバーに表示」</figcaption>
+            </figure>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>BPMの自動計測</h3>
+            <p>クリックすると、Bridge Meterで現在選択されている入力音声からBPMを計測します。System Audio Out、System Audio Input、Bridge Pluginのどの入力でも利用できます。計測中は文字がオレンジ色になり、最初は「計測中…」と表示されます。約10秒後、十分に安定した値が得られた場合は暫定BPMを表示し、最大約20秒で最終的なBPMを確定します。</p>
+            <div class="tempo-states">
+              <figure class="manual-media tempo-status">
+                <img src="../../assets/gakkey-lab/bridge-meter-tempo-idle.png" width="164" height="76" alt="--- BPM">
+                <figcaption>メニューバーのテンポツール</figcaption>
               </figure>
-              <p>
-                入力設定がBridge Pluginの場合、ランプは常に表示されます。<br>
-                通常の入力設定がSystem Audio Input／Outputの場合は、Bridge Pluginへ接続したときだけランプが表示されます。Shift＋マウスホイールで、Bridge Pluginと通常の入力を一時的に切り替えられます。
-              </p>
-              <p>Bridge Pluginが起動していれば、プラグイン側でConnectを押していなくても、Shift＋ホイール上方向でBridge Pluginへ切り替えられます。Bridge Pluginが見つからない場合は切り替わりません。</p>
-            </section>
+              <figure class="manual-media tempo-status">
+                <img src="../../assets/gakkey-lab/bridge-meter-tempo-detecting.png" width="220" height="74" alt="オレンジ色の Detecting...">
+                <figcaption>計測中</figcaption>
+              </figure>
+              <figure class="manual-media tempo-status">
+                <img src="../../assets/gakkey-lab/bridge-meter-tempo-provisional.png" width="194" height="70" alt="オレンジ色の 130 BPM">
+                <figcaption>暫定値</figcaption>
+              </figure>
+              <figure class="manual-media tempo-status">
+                <img src="../../assets/gakkey-lab/bridge-meter-tempo-confirmed.png" width="166" height="74" alt="白色の 131 BPM">
+                <figcaption>確定</figcaption>
+              </figure>
+            </div>
+            <ul class="manual-bullet-list">
+              <li>計測はクリックした時だけ行われ、常時解析は行いません。</li>
+              <li>計測中にもう一度クリックすると、計測をキャンセルして計測前のBPMに戻ります。</li>
+              <li>確定後は解析を停止し、最後のBPMを表示し続けます。</li>
+              <li>計測できなかった場合は、計測前のBPMまたは「--- BPM」へ戻ります。</li>
+              <li>テンポツールを非表示にすると、BPM解析と解析モデルも停止・解放されます。</li>
+            </ul>
+            <p class="manual-note">BPMは楽曲のおおよそのテンポを確認するための目安です。リズムの複雑な楽曲などでは、実際のテンポの半分または倍の値になる場合があります。その場合は、詳細パネルから手動で修正できます。</p>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>タップテンポ</h3>
+            <p>Shiftキーを押しながら、曲の拍に合わせてテンポツールを繰り返しクリックします。最初のクリックで計測準備を行い、その後のクリック間隔からBPMを計算します。合計6回以上クリックすると確定できます。クリック回数を増やすほど、手動タップの揺れを平均化して精度を高められます。タップ中はオレンジ色で0/5 TAP、1/5 TAPのように進行状況が表示され、十分な回数に達するとBPMが確定します。</p>
+            <figure class="manual-media tempo-status">
+              <img src="../../assets/gakkey-lab/bridge-meter-tempo-tap.png" width="172" height="72" alt="オレンジ色の 0/5 TAP">
+              <figcaption>最初のクリック直後のタップテンポ表示</figcaption>
+            </figure>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>テンポツールの詳細パネル</h3>
+            <p>テンポツールを右クリック、Controlクリック、またはOptionクリックすると、詳細パネルが開きます。</p>
+            <p>詳細パネルでは、テンポに応じたディレイタイムの確認や、音量の%／dB換算もできます。</p>
+            <div class="manual-detail-split tempo-panel">
+              <figure class="manual-media">
+                <img src="../../assets/gakkey-lab/bridge-meter-tempo-panel.png" width="614" height="826" alt="BPM、Beat Time、LEVEL、非表示ボタンが並ぶ詳細パネル">
+                <figcaption>テンポツールの詳細パネル</figcaption>
+              </figure>
+              <div class="manual-detail-copy">
+                <section class="manual-detail-block">
+                  <h4>BPMの手動入力</h4>
+                  <p>BPM欄へ数値を入力してReturnキーを押すと、BPMを直接設定できます。−／＋ボタンでは1 BPMずつ変更できます。</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>Beat Time</h4>
+                  <p>設定したBPMに対応するディレイタイムをミリ秒で表示します。</p>
+                  <table class="manual-operation-table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">1/4</th>
+                        <td>4分音符</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/8</th>
+                        <td>8分音符</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/4T</th>
+                        <td>4分音符3連</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/8D</th>
+                        <td>付点8分音符</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>ミリ秒の数値をクリックすると、単位を含まない数値だけをクリップボードへコピーできます。ディレイなどのPluginの数値欄へ直接ペーストする時に使用できます。÷2／×2ボタンを押すと、4種類すべての音価とディレイタイムをまとめて半分／2倍へ変更できます。</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>LEVEL：%／dB換算</h4>
+                  <p>音量のパーセント指定を、振幅比に基づいたdB値へ換算できます。%とdBのどちら側からでも入力でき、Returnキーで確定します。例：50%=−6.0 dB、25%=−12.0 dB、200%=＋6.0 dB。最後に入力した値は保存され、次回パネルを開いた時も維持されます。</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>テンポツールを非表示</h4>
+                  <p>詳細パネル下部の「テンポツールを非表示」を押すと、メニューバーからテンポツールを取り除けます。再表示する場合は、Bridge Meterの「表示」メニューからオンにします。</p>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>プライバシーと処理</h3>
+            <p>BPM解析はMac上でローカルに行われます。解析に使用した音声は録音・保存・外部送信されません。</p>
           </div>
         </section>
 

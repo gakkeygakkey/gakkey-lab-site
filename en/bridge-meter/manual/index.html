@@ -50,10 +50,11 @@
         <nav>
           <span>Quick Manual</span>
           <a href="#inputs">Choose Input</a>
+          <a href="#bridge-plugin">Bridge Plugin</a>
           <a href="#meter-display">Meter Display</a>
           <a href="#reference-level">Reference Level</a>
           <a href="#panels">Panels</a>
-          <a href="#bridge-plugin">Bridge Plugin</a>
+          <a href="#tempo-tool">Tempo Tool</a>
           <span>Detailed Manual</span>
           <a href="#layout-sets">Layout Sets</a>
           <a href="#vu-settings">VU Settings</a>
@@ -105,6 +106,51 @@
             Using System Audio Out requires macOS System Audio Recording permission.<br>
             Bridge Meter uses audio only for metering. It never records, stores, or transmits audio externally.
           </p>
+        </section>
+
+        <section class="manual-section" id="bridge-plugin">
+          <div class="manual-section-copy">
+            <p class="eyebrow">Bridge Plugin</p>
+            <h2>Receive from Bridge Plugin</h2>
+            <p>
+              Insert the AAX / VST3 / AU compatible Bridge Plugin in your DAW,
+              and Bridge Meter can receive the display signal directly from the DAW.
+              The plugin sends only the signal used for metering and does not change the audio itself.
+            </p>
+          </div>
+          <figure class="manual-media framed">
+            <img src="../../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge Plugin Connect Meter button">
+          </figure>
+          <table class="manual-operation-table wide">
+            <tbody>
+              <tr>
+                <th>Click the Connect Meter button</th>
+                <td>Launch Bridge Meter and switch its input to Bridge Plugin</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="manual-note">
+            If Bridge Meter is already running, clicking the button will still switch the input to Bridge Plugin.<br>
+            When the plugin disappears, if the previous input was System Audio Out / Input, Bridge Meter returns to that input.
+          </p>
+          <div class="manual-detail-copy manual-detail-full">
+            <section class="manual-detail-block">
+              <h3>Bridge Plugin indicator light</h3>
+              <p>The indicator light at the bottom-right of the VU meter shows the Bridge Plugin status. When it is lit, Bridge Meter is displaying audio received from Bridge Plugin.</p>
+              <ul class="manual-bullet-list">
+                <li>Lit: Receiving audio from Bridge Plugin</li>
+                <li>Unlit: Waiting for Bridge Plugin audio, or temporarily using System Audio Input / Output</li>
+              </ul>
+              <figure class="manual-media medium manual-plugin-lamp">
+                <img src="../../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Plugin indicator light when unlit and lit">
+              </figure>
+              <p>
+                When Bridge Plugin is selected as the input, the indicator is always visible.<br>
+                When System Audio Input / Output is normally selected, the indicator appears only while connected to Bridge Plugin. Use Shift + the scroll wheel to temporarily switch between Bridge Plugin and the normal input.
+              </p>
+              <p>If Bridge Plugin is running, Shift + scroll up switches to Bridge Plugin even if Connect has not been pressed in the plugin. Nothing changes if Bridge Plugin cannot be found.</p>
+            </section>
+          </div>
         </section>
 
         <section class="manual-section manual-section-stack" id="meter-display">
@@ -200,48 +246,132 @@
           </p>
         </section>
 
-        <section class="manual-section" id="bridge-plugin">
+        <section class="manual-section manual-section-stack" id="tempo-tool">
           <div class="manual-section-copy">
-            <p class="eyebrow">Bridge Plugin</p>
-            <h2>Receive from Bridge Plugin</h2>
-            <p>
-              Insert the AAX / VST3 / AU compatible Bridge Plugin in your DAW,
-              and Bridge Meter can receive the display signal directly from the DAW.
-              The plugin sends only the signal used for metering and does not change the audio itself.
-            </p>
+            <h2>Tempo Tool</h2>
+            <p>Bridge Meter has a menu bar tool for automatic BPM detection, tap tempo, and delay-time calculation. To show it in the menu bar, turn on <strong>Show Tempo Tool in Menu Bar</strong> in Bridge Meter’s <strong>View</strong> menu.</p>
           </div>
-          <figure class="manual-media framed">
-            <img src="../../../assets/gakkey-lab/plugin-connect.gif" alt="Bridge Plugin Connect Meter button">
-          </figure>
-          <table class="manual-operation-table wide">
-            <tbody>
-              <tr>
-                <th>Click the Connect Meter button</th>
-                <td>Launch Bridge Meter and switch its input to Bridge Plugin</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="manual-note">
-            If Bridge Meter is already running, clicking the button will still switch the input to Bridge Plugin.<br>
-            When the plugin disappears, if the previous input was System Audio Out / Input, Bridge Meter returns to that input.
-          </p>
-          <div class="manual-detail-copy manual-detail-full">
-            <section class="manual-detail-block">
-              <h3>Bridge Plugin indicator light</h3>
-              <p>The indicator light at the bottom-right of the VU meter shows the Bridge Plugin status. When it is lit, Bridge Meter is displaying audio received from Bridge Plugin.</p>
-              <ul class="manual-bullet-list">
-                <li>Lit: Receiving audio from Bridge Plugin</li>
-                <li>Unlit: Waiting for Bridge Plugin audio, or temporarily using System Audio Input / Output</li>
-              </ul>
-              <figure class="manual-media medium manual-plugin-lamp">
-                <img src="../../../assets/gakkey-lab/bridge-plugin-status-lamp.png" alt="Bridge Plugin indicator light when unlit and lit">
+          <div class="manual-operation-row">
+            <table class="manual-operation-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Click</th>
+                  <td>Start automatic BPM detection</td>
+                </tr>
+                <tr>
+                  <th scope="row">Click during detection</th>
+                  <td>Cancel detection</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span>Shift-click</span> repeatedly</th>
+                  <td>Tap tempo</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span>Right-click</span> (<span>Control-click</span>)<br>or <span>Option-click</span></th>
+                  <td>Open the details panel</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="manual-media">
+              <img src="../../../assets/gakkey-lab/bridge-meter-tempo-menu.png" width="1114" height="598" alt="Show Tempo Tool in Menu Bar in the View menu">
+              <figcaption>View › Show Tempo Tool in Menu Bar</figcaption>
+            </figure>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>Automatic BPM Detection</h3>
+            <p>Click to detect the BPM of the audio from the currently selected input in Bridge Meter. Detection works with System Audio Out, System Audio Input, and Bridge Plugin. While detection runs, the text turns orange and initially reads “Detecting...”. After about 10 seconds, a provisional BPM appears if the estimate is stable enough. The final BPM is confirmed within about 20 seconds.</p>
+            <div class="tempo-states">
+              <figure class="manual-media tempo-status">
+                <img src="../../../assets/gakkey-lab/bridge-meter-tempo-idle.png" width="164" height="76" alt="--- BPM">
+                <figcaption>Tempo Tool in the menu bar</figcaption>
               </figure>
-              <p>
-                When Bridge Plugin is selected as the input, the indicator is always visible.<br>
-                When System Audio Input / Output is normally selected, the indicator appears only while connected to Bridge Plugin. Use Shift + the scroll wheel to temporarily switch between Bridge Plugin and the normal input.
-              </p>
-              <p>If Bridge Plugin is running, Shift + scroll up switches to Bridge Plugin even if Connect has not been pressed in the plugin. Nothing changes if Bridge Plugin cannot be found.</p>
-            </section>
+              <figure class="manual-media tempo-status">
+                <img src="../../../assets/gakkey-lab/bridge-meter-tempo-detecting.png" width="220" height="74" alt="Detecting... in orange">
+                <figcaption>Detecting</figcaption>
+              </figure>
+              <figure class="manual-media tempo-status">
+                <img src="../../../assets/gakkey-lab/bridge-meter-tempo-provisional.png" width="194" height="70" alt="130 BPM in orange">
+                <figcaption>Provisional BPM</figcaption>
+              </figure>
+              <figure class="manual-media tempo-status">
+                <img src="../../../assets/gakkey-lab/bridge-meter-tempo-confirmed.png" width="166" height="74" alt="131 BPM in white">
+                <figcaption>Confirmed BPM</figcaption>
+              </figure>
+            </div>
+            <ul class="manual-bullet-list">
+              <li>Detection runs only when you click the Tempo Tool.</li>
+              <li>Click again during detection to cancel it and restore the previous BPM.</li>
+              <li>Once the BPM is confirmed, analysis stops and the last BPM remains visible.</li>
+              <li>If detection fails, the display returns to the previous BPM or “--- BPM”.</li>
+              <li>Hiding the Tempo Tool stops BPM analysis and unloads the analysis model.</li>
+            </ul>
+            <p class="manual-note">The BPM is an estimate of the track’s tempo. Tracks with complex rhythms, for example, may register at half or double the actual tempo. You can correct the value manually in the details panel.</p>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>Tap Tempo</h3>
+            <p>Hold Shift and click the Tempo Tool repeatedly in time with the beat. The first click starts the tap sequence, and the intervals between subsequent clicks determine the BPM. It takes at least six clicks to confirm a BPM. More clicks average out variations in your timing and can improve accuracy. During tapping, progress appears in orange as 0/5 TAP, 1/5 TAP, and so on. Once enough taps are registered, the BPM is confirmed.</p>
+            <figure class="manual-media tempo-status">
+              <img src="../../../assets/gakkey-lab/bridge-meter-tempo-tap.png" width="172" height="72" alt="0/5 TAP in orange">
+              <figcaption>Tap tempo progress after the first click</figcaption>
+            </figure>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>Tempo Tool Details Panel</h3>
+            <p>Right-click, Control-click, or Option-click the Tempo Tool to open the details panel.</p>
+            <p>The details panel also shows delay times for the current tempo and lets you convert volume between percentages and dB.</p>
+            <div class="manual-detail-split tempo-panel">
+              <figure class="manual-media">
+                <img src="../../../assets/gakkey-lab/bridge-meter-tempo-panel.png" width="614" height="826" alt="Details panel with BPM, Beat Time, LEVEL, and Hide Tempo Tool">
+                <figcaption>Tempo Tool details panel</figcaption>
+              </figure>
+              <div class="manual-detail-copy">
+                <section class="manual-detail-block">
+                  <h4>Manual BPM Entry</h4>
+                  <p>Enter a number in the BPM field and press Return to set the BPM directly. The − and + buttons change it by 1 BPM at a time.</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>Beat Time</h4>
+                  <p>Beat Time shows delay times in milliseconds for the current BPM.</p>
+                  <table class="manual-operation-table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">1/4</th>
+                        <td>Quarter note</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/8</th>
+                        <td>Eighth note</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/4T</th>
+                        <td>Quarter-note triplet</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1/8D</th>
+                        <td>Dotted eighth note</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Click a millisecond value to copy just the number to the clipboard, without the unit. You can paste it directly into a numerical field in a plug-in such as a delay. Use the ÷2 or ×2 button to halve or double all four note durations and their delay times at once.</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>LEVEL (% / dB Conversion)</h4>
+                  <p>Convert a volume percentage to dB using the amplitude ratio. Enter a value in either the % or dB field and press Return to confirm. For example, 50% = −6.0 dB, 25% = −12.0 dB, and 200% = +6.0 dB. The panel saves the last value you entered and restores it the next time you open it.</p>
+                </section>
+                <section class="manual-detail-block">
+                  <h4>Hide Tempo Tool</h4>
+                  <p>Click <strong>Hide Tempo Tool</strong> at the bottom of the details panel to remove the tool from the menu bar. To show it again, turn it on in Bridge Meter’s <strong>View</strong> menu.</p>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-subsection">
+            <h3>Privacy and Processing</h3>
+            <p>BPM analysis runs locally on your Mac. Audio used for analysis is never recorded, saved, or sent externally.</p>
           </div>
         </section>
 
